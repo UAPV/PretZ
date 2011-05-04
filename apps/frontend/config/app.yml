@@ -1,0 +1,45 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+
+all:
+  cas_server:
+    host: cas.univ-avignon.fr
+    port: 443
+    path:
+
+  ldap_server:
+    host: ldap.univ-avignon.fr
+    port: 389
+    basedn: dc=univ-avignon,dc=fr
+    options: {<?php echo LDAP_OPT_PROTOCOL_VERSION ?>: 3}
+
+  uapv_form_extra_autocomplete:
+    query_length: 2
+
+  profile:
+    var_translation:
+      uid: uid
+      name: sn
+      surname: displayname
+      mail: mail
+      cn: cn
+      affectation: supannaffectation
+      uapvharpege: uapvharpege
+
+  mailer:
+    param:
+      transport:
+        param:
+          host: smtp.univ-avignon.fr
+          port: 25
+  pager:
+    lends_max: 10
+
+
+dev:
+  mailer:
+    param:
+      delivery_strategy: single_address
+      delivery_address:  pretz@info.fr
+

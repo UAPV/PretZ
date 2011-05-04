@@ -1,0 +1,172 @@
+/*
+    Document   : stat.css
+    Created on : 30 nov. 2010, 16:54:26
+    Author     : fanny
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+#graphe
+{
+    margin: 80px;
+}
+
+#conteneur
+{
+    padding: 10px;
+}
+
+#maxJokers
+{
+    border: 1px solid #CD0A0A;
+    background-color: #FEF1EC;
+    -moz-border-radius: 10px;
+    -moz-box-shadow: 1px 1px 10px lightgrey;
+    color: #CD0A0A;
+    margin-top: 20px;
+}
+
+#maxJokers p
+{
+    padding-left: 20px;
+}
+
+#maxProduct
+{
+    border: 1px solid #EEB420;
+    background-color: #FFF9E5;
+    -moz-border-radius: 10px;
+    -moz-box-shadow: 1px 1px 10px lightgrey;
+}
+
+#maxProduct p
+{
+    padding-left: 20px;
+}
+
+#alert
+{
+   width: 60%;
+   margin-left: 25%;
+   margin-top: 5%;
+}
+
+#choixDate, #choixMois, #choixAnnee
+{
+    display: none;
+}
+
+span
+{
+    margin-right: 20px;
+}
+
+.historique
+{
+    border: 1.5px solid #5f9ea0;
+    border-collapse: collapse;
+    width: 50%;
+    margin: 30px;
+    margin-top: 100px;
+}
+
+.historique td
+{
+    padding: 2px;
+    border: thin solid #6495ed;
+}
+
+#menuEmprunt
+{
+    padding-left: 50px;
+}
+
+#pagination
+{
+    float: right;
+    position:relative;
+    font-weight: bold;
+    color: #00008b;
+    margin-top: 600px;
+    font-size: 1.1em;
+    margin-right: 120px;
+}
+
+#pagination a
+{
+    font-weight:normal;
+    color: #818D98;
+    font-size: 0.9em;
+}
+
+#pagination span
+{
+    margin-right:0;
+}
+
+#pagination img
+{
+    border: none;
+}
+
+.historique th
+{
+    font-family: monospace;
+    border: thin solid #6495ed;
+    padding: 5px;
+    background-color: #D0E3FA;
+}
+
+#test
+{
+    background-color: #8A7E6B;
+    height: 20px;
+}
+
+#logo
+{
+    margin-left: 40px;
+}
+
+#pie
+{
+    margin-top: 490px;
+}
+
+#pieChart
+{
+    float: left;
+    margin-left: 40px;
+    height: 300px;
+}
+
+#pieChart2
+{
+    float: right;
+    margin-right: 40px;
+}
+
+.nameProd
+{
+    width: 40%;
+}
+
+.date
+{
+    width: 50%;
+}
+
+.img
+{
+    width: 10%;
+}
+
+.fini
+{
+    text-align: center;
+}

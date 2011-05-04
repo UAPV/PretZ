@@ -1,0 +1,84 @@
+.ac_results {
+    padding: 0px;    
+    background-color: white;
+    overflow: hidden;
+    z-index: 99999;
+    border: 1px solid #CCC;
+    cursor:pointer;
+    -moz-box-shadow:    10px 10px 10px rgba(0,0,0,0.08);
+    -webkit-box-shadow: 10px 10px 10px rgba(0,0,0,0.08);
+}
+
+.ac_results ul {
+    width: 100%;
+    list-style-position: outside;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ac_results li {
+    margin: 0px;
+    padding: 2px 5px;
+    cursor: default;
+    display: block;
+    /*
+    if width will be 100% horizontal scrollbar will apear
+    when scroll mode will be used
+    */
+    /*width: 100%;*/
+    font: menu;
+    font-size: 12px;
+    /*
+    it is very important, if line-height not setted or setted
+    in relative units scroll will be broken in firefox
+    */
+    line-height: 16px;
+    overflow: hidden;
+}
+
+.ac_loading {
+    background: white url('../images/indicator.gif') right center no-repeat;
+}
+
+.ac_odd {
+    background-color: #eee;
+}
+
+.ac_over {
+    background-color:  #516B96;
+    color: white;    
+}
+
+.autocomplete_div{
+    color: grey;
+    font-size: 10px;
+}
+
+.ac_over .autocomplete_div{
+    color:white;
+}
+
+.uapv_form_extra_input {
+    padding : 0.2em 0.1em;
+    color: #2F2F2F;
+    border: 1px solid #EDEBE6;
+    border: 1px solid rgba(0,0,0,0.3);
+    -moz-border-radius:    2px;
+    -webkit-border-radius: 2px;
+    -moz-box-shadow:    inset 0 10px 10px rgba(0,0,0,0.08);
+    -webkit-box-shadow: inset 0 10px 10px rgba(0,0,0,0.08);
+    background : transparent url('../images/37.png') no-repeat 4px center;
+    padding-left: 22px;
+}
+.uapv_ac_pers {
+    background : transparent url('../images/37.png') no-repeat 4px center;
+    padding-left: 22px;
+}
+.uapv_ac_enseignement {
+  background-image : none; /* TODO trouver une image pour représenter une UE ? */
+  padding-left: 0;
+  width: 260px; /* Besoin de largeur pour affiche code + libellé */
+}
+
+

@@ -1,0 +1,37 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           category
+    theme:                 admin15
+    non_verbose_templates: true
+    with_show:             false
+    singular:              category
+    plural:                categories
+    route_prefix:          category
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        name:           { label: Nom }
+        logo:           { label: Logo }
+        created_at:     { label: DateCreation, date_format: dd/MM/yy }
+
+      list:
+        display: [=name, description, created_at]
+        title:   Liste des catégories
+        batch_actions: {}
+        max_per_page: 10
+
+      filter:
+        display: [=name]
+  
+      form:    ~
+      edit:
+        title: Modification catégorie "%%name%%"
+      new:
+        title: Nouvelle catégorie
+        display: [=name, description, logo]
+      
+ 

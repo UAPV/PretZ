@@ -1,0 +1,47 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           product
+    theme:                 admin15
+    non_verbose_templates: true
+    with_show:             false
+    singular:              Produit
+    plural:                Produits
+    route_prefix:          product
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        name:               { label: Nom }
+        brand:              { label: Marque }
+        state:              { label: Emprunté }
+        dateBuying :        { label: DateAchat, date_format: dd/MM/yy }
+        barcode:            { label: Code-barres }
+        referant:           { label: Référant }
+        comments:           { label: Commentaires }
+        product_categ_list: { label: Catégorie(s) }
+        created_at:         { label: Créé le }
+      list:
+        batch_actions:
+          _edit:      ~
+          _delete:    ~
+          monpdf: { label: Code-barres , action: MonPDF }
+        object_actions:
+          _edit:      ~
+          _delete:    ~
+          monpdf: { label: Code-barres , action: MonPDF }
+        display: [=name, barcode, state, referant ]
+        sort:    [name, asc]
+        max_per_page: 5
+        title: Liste des produits
+      filter:
+        display: [=name, barcode, referant, created_at]
+      form:    ~
+      edit:
+        title: Modification du produit %%name%%
+        display: [name, description, brand, barcode, dateBuying, referant, comments, product_categ_list]
+      new:
+        title: Nouveau produit
+        display: [name, description, brand, barcode, dateBuying, referant, comments, product_categ_list]

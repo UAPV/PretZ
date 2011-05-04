@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head>
+
+
+
+    <link rel="icon" href="http://localhost/phpmyadmin/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://localhost/phpmyadmin/favicon.ico" type="image/x-icon">
+    <title>phpMyAdmin</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- base -->
+    <link rel="stylesheet" type="text/css" href="navigation_data/phpmyadmin.css">
+    <script type="text/javascript" src="navigation_data/navigation.js"></script>
+    <script type="text/javascript" src="navigation_data/functions.js"></script>
+    <script type="text/javascript">
+    // <![CDATA[
+    var image_minus = './themes/original/img/b_minus.png';
+    var image_plus = './themes/original/img/b_plus.png';
+
+    // INIT PMA_setFrameSize
+    var onloadCnt = 0;
+    var onLoadHandler = window.onload;
+    var resizeHandler = window.onresize;
+    window.document.onresize  = resizeHandler;
+    window.onload = function() {
+        if (onloadCnt == 0) {
+            if (typeof(onLoadHandler) == "function") {
+                onLoadHandler();
+            }
+            if (typeof(PMA_setFrameSize) != 'undefined' && typeof(PMA_setFrameSize) == 'function') {
+                PMA_setFrameSize();
+            }
+            onloadCnt++;
+        }
+    };
+    window.onresize = function() {
+        if (typeof(resizeHandler) == "function") {
+            resizeHandler();
+        }
+        if (typeof(PMA_saveFrameSize) != 'undefined' && typeof(PMA_saveFrameSize) == 'function') {
+            PMA_saveFrameSize();
+        }
+    };
+    // ]]>
+    </script>
+        <!--[if IE 6]>
+    <style type="text/css">
+    /* <![CDATA[ */
+    html {
+        overflow-y: scroll;
+    }
+    /* ]]> */
+    </style>
+    <![endif]-->
+</head><div firebugversion="1.5.4" style="display: none;" id="_firebugConsole"></div><body id="body_leftFrame">
+<div id="pmalogo">
+<a href="http://localhost/phpmyadmin/main.php?token=d0534b7117418e890618838ed32fe960" target="frame_content"><img src="navigation_data/logo_left.png" alt="phpMyAdmin" id="imgpmalogo"></a>
+</div>
+<div id="leftframelinks">
+<a href="http://localhost/phpmyadmin/main.php?token=d0534b7117418e890618838ed32fe960" title="Accueil"><img class="icon" src="navigation_data/b_home.png" alt="Accueil" height="16" width="16"></a>
+<a href="http://localhost/phpmyadmin/index.php?token=d0534b7117418e890618838ed32fe960&amp;old_usr=root" target="_parent" title="Quitter"><img class="icon" src="navigation_data/s_loggoff.png" alt="Quitter" height="16" width="16"></a>
+<a href="http://localhost/phpmyadmin/querywindow.php?db=pretz&amp;table=product&amp;token=d0534b7117418e890618838ed32fe960&amp;no_js=true" title="Fenêtre SQL" onclick="javascript:if (window.parent.open_querywindow()) return false;"><img class="icon" src="navigation_data/b_selboard.png" alt="Fenêtre SQL" height="16" width="16"></a>
+    <a href="http://localhost/phpmyadmin/Documentation.html" target="documentation" title="Documentation de phpMyAdmin"><img class="icon" src="navigation_data/b_docs.png" alt="Documentation de phpMyAdmin" height="16" width="16"></a>
+    <a href="http://dev.mysql.com/doc/refman/5.1/en/index.html" target="mysql_doc"><img class="icon" src="navigation_data/b_sqlhelp.png" alt="Documentation" title="Documentation" height="16" width="16"></a>
+</div>
+
+    <div id="databaseList">
+    <form method="post" action="index.php" target="_parent" id="left">
+    <label for="lightm_db">Base de données</label>
+    <input name="token" value="d0534b7117418e890618838ed32fe960" type="hidden">
+<select name="db" id="lightm_db" xml:lang="en" dir="ltr" onchange="if (this.value != '') window.parent.openDb(this.value);">
+<option value="" dir="ltr">(Bases de données) ...</option>
+<option value="information_schema" title="">information_schema (28)</option>
+<option value="mysql" title="">mysql (23)</option>
+<option value="phpmyadmin" title="">phpmyadmin (9)</option>
+<option value="pretz" title="" selected="selected">pretz (16)</option>
+</select>
+<noscript>
+<input type="submit" name="Go" value="Exécuter" />
+</noscript>
+</form>
+</div>
+
+<div id="left_tableList">
+    <p><a class="item" href="http://localhost/phpmyadmin/db_structure.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960" title="">
+    <span class="navi_dbName">pretz</span> <bdo dir="ltr">(16)</bdo> </a></p><span id="NavFilter" style=""><span onclick="document.getElementById('fast_filter').value=''; fast_filter('');document.getElementById('fast_filter').focus();" style="background: none repeat scroll 0% 0% white; color: black; cursor: pointer; padding: 2px; margin: 0pt 0pt 0pt -20px; position: relative; float: right;" title="Réinitialiser">X</span><input name="fast_filter" id="fast_filter" title="Filtre" onkeyup="setTimeout(function(word){ return function(){ fast_filter(word);}}(this.value),1000);" style="width: 90%; padding: 2px;" onfocus="this.select();" type="text"></span><script type="text/javascript">document.getElementById('NavFilter').style.display='';</script><ul id="subel0"><li>
+<a title="Structure:  (1 Lignes)" id="quick_pretz.admin" href="http://localhost/phpmyadmin/tbl_structure.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=admin&amp;goto=tbl_structure.php"><img class="icon" src="navigation_data/b_sbrowse.png" id="icon_pretz.admin" alt="Structure" height="10" width="10"></a>
+<a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=admin&amp;pos=0" title="Afficher:  (1 Lignes)" id="pretz.admin">admin</a></li>
+<li>
+<a title="Structure:  (1 Lignes)" id="quick_pretz.category" href="http://localhost/phpmyadmin/tbl_structure.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=category&amp;goto=tbl_structure.php"><img class="icon" src="navigation_data/b_sbrowse.png" id="icon_pretz.category" alt="Structure" height="10" width="10"></a>
+<a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=category&amp;pos=0" title="Afficher:  (1 Lignes)" id="pretz.category">category</a></li>
+<li>
+<a title="Structure:  (0 Lignes)" id="quick_pretz.connection" href="http://localhost/phpmyadmin/tbl_structure.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=connection&amp;goto=tbl_structure.php"><img class="icon" src="navigation_data/b_sbrowse.png" id="icon_pretz.connection" alt="Structure" height="10" width="10"></a>
+<a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=connection&amp;pos=0" title="Afficher:  (0 Lignes)" id="pretz.connection">connection</a></li>
+<li>
+<a title="Structure:  (2 Lignes)" id="quick_pretz.lend" href="http://localhost/phpmyadmin/tbl_structure.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=lend&amp;goto=tbl_structure.php"><img class="icon" src="navigation_data/b_sbrowse.png" id="icon_pretz.lend" alt="Structure" height="10" width="10"></a>
+<a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=lend&amp;pos=0" title="Afficher:  (2 Lignes)" id="pretz.lend">lend</a></li>
+<li>
+<a title="Structure:  (2 Lignes)" id="quick_pretz.lend_product" href="http://localhost/phpmyadmin/tbl_structure.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=lend_product&amp;goto=tbl_structure.php"><img class="icon" src="navigation_data/b_sbrowse.png" id="icon_pretz.lend_product" alt="Structure" height="10" width="10"></a>
+<a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=lend_product&amp;pos=0" title="Afficher:  (2 Lignes)" id="pretz.lend_product">lend_product</a></li>
+<li>
+<a title="Structure:  (2 Lignes)" id="quick_pretz.level" href="http://localhost/phpmyadmin/tbl_structure.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=level&amp;goto=tbl_structure.php"><img class="icon" src="navigation_data/b_sbrowse.png" id="icon_pretz.level" alt="Structure" height="10" width="10"></a>
+<a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=level&amp;pos=0" title="Afficher:  (2 Lignes)" id="pretz.level">level</a></li>
+<li>
+<a title="Structure:  (0 Lignes)" id="quick_pretz.option" href="http://localhost/phpmyadmin/tbl_structure.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=option&amp;goto=tbl_structure.php"><img class="icon" src="navigation_data/b_sbrowse.png" id="icon_pretz.option" alt="Structure" height="10" width="10"></a>
+<a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=option&amp;pos=0" title="Afficher:  (0 Lignes)" id="pretz.option">option</a></li>
+<li>
+<a title="Structure:  (1 Lignes)" id="quick_pretz.option_ip" href="http://localhost/phpmyadmin/tbl_structure.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=option_ip&amp;goto=tbl_structure.php"><img class="icon" src="navigation_data/b_sbrowse.png" id="icon_pretz.option_ip" alt="Structure" height="10" width="10"></a>
+<a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=option_ip&amp;pos=0" title="Afficher:  (1 Lignes)" id="pretz.option_ip">option_ip</a></li>
+<li class="">
+<a title="Structure:  (1)" id="quick_pretz.product" href="http://localhost/phpmyadmin/tbl_structure.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=product&amp;goto=tbl_structure.php"><img class="icon" src="navigation_data/b_sbrowse.png" id="icon_pretz.product" alt="Structure" height="10" width="10"></a>
+<a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=product&amp;pos=0" title="Afficher:  (1)" id="pretz.product">product</a></li>
+<li class="">
+<a title="Structure:  (0)" id="quick_pretz.product_categ" href="http://localhost/phpmyadmin/tbl_structure.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=product_categ&amp;goto=tbl_structure.php"><img class="icon" src="navigation_data/b_sbrowse.png" id="icon_pretz.product_categ" alt="Structure" height="10" width="10"></a>
+<a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=product_categ&amp;pos=0" title="Afficher:  (0)" id="pretz.product_categ">product_categ</a></li>
+<li>
+<a title="Structure:  (0 Lignes)" id="quick_pretz.product_user" href="http://localhost/phpmyadmin/tbl_structure.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=product_user&amp;goto=tbl_structure.php"><img class="icon" src="navigation_data/b_sbrowse.png" id="icon_pretz.product_user" alt="Structure" height="10" width="10"></a>
+<a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=product_user&amp;pos=0" title="Afficher:  (0 Lignes)" id="pretz.product_user">product_user</a></li>
+<li>
+<a title="Structure:  (0 Lignes)" id="quick_pretz.service" href="http://localhost/phpmyadmin/tbl_structure.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=service&amp;goto=tbl_structure.php"><img class="icon" src="navigation_data/b_sbrowse.png" id="icon_pretz.service" alt="Structure" height="10" width="10"></a>
+<a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=service&amp;pos=0" title="Afficher:  (0 Lignes)" id="pretz.service">service</a></li>
+<li>
+<a title="Structure:  (0 Lignes)" id="quick_pretz.student" href="http://localhost/phpmyadmin/tbl_structure.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=student&amp;goto=tbl_structure.php"><img class="icon" src="navigation_data/b_sbrowse.png" id="icon_pretz.student" alt="Structure" height="10" width="10"></a>
+<a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=student&amp;pos=0" title="Afficher:  (0 Lignes)" id="pretz.student">student</a></li>
+<li>
+<a title="Structure:  (0 Lignes)" id="quick_pretz.student_user" href="http://localhost/phpmyadmin/tbl_structure.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=student_user&amp;goto=tbl_structure.php"><img class="icon" src="navigation_data/b_sbrowse.png" id="icon_pretz.student_user" alt="Structure" height="10" width="10"></a>
+<a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=student_user&amp;pos=0" title="Afficher:  (0 Lignes)" id="pretz.student_user">student_user</a></li>
+<li class=" marked">
+<a title="Structure:  (0)" id="quick_pretz.template" href="http://localhost/phpmyadmin/tbl_structure.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=template&amp;goto=tbl_structure.php"><img class="icon" src="navigation_data/b_sbrowse.png" id="icon_pretz.template" alt="Structure" height="10" width="10"></a>
+<a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=template&amp;pos=0" title="Afficher:  (0)" id="pretz.template">template</a></li>
+<li>
+<a title="Structure:  (1 Lignes)" id="quick_pretz.user" href="http://localhost/phpmyadmin/tbl_structure.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=user&amp;goto=tbl_structure.php"><img class="icon" src="navigation_data/b_sbrowse.png" id="icon_pretz.user" alt="Structure" height="10" width="10"></a>
+<a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960&amp;table=user&amp;pos=0" title="Afficher:  (1 Lignes)" id="pretz.user">user</a></li>
+</ul></div>
+</body></html>

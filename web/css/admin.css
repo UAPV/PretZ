@@ -1,0 +1,275 @@
+body
+{
+    padding: 0;
+}
+
+#sf_admin_container
+{
+    margin: 15px;
+    margin-top: 80px;
+}
+
+#container
+{
+  width: 100%;
+  background: none;
+}
+
+#content
+{
+  padding: 25px;
+  padding-top: 0;
+}
+
+#menuAdmin
+{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 20px;
+  margin-bottom: 15px;
+  text-align: right;
+  -moz-box-shadow: 1px 1px 10px lightgrey;
+  border: 1px solid #A6C9E2;
+  background-color: white;
+}
+
+#menu li
+{
+  margin-right: 100px;
+  font-size: 1.3em;
+  display: inline;
+}
+
+#menu li:hover
+{
+    font-weight: bold;
+}
+
+#content h1
+{
+  background: transparent;
+  margin-bottom: 20px;
+  font-size: 140%;
+  color: #000;
+}
+
+td, th
+{
+  padding: 7px;
+}
+
+th
+{
+  font-weight: bold;
+}
+
+#footer
+{
+  clear: both;
+  padding: 25px;
+  margin-top: 0;
+  height: auto;
+  font-family: arial,sans-serif;
+  font-size: 80%;
+  float: right;
+  color: #666;
+  background: none;
+}
+
+#footer img
+{
+  vertical-align: middle;
+}
+
+#sf_admin_container fieldset h2
+{
+  font-size: 110%;
+  font-family: arial,sans-serif;
+  font-style: italic;
+}
+
+.sf_admin_form_field_logo div div
+{
+  margin-left: 120px;
+}
+
+#sf_admin_container .sf_admin_form_field_logo div div label
+{
+  display: inline;
+  float: none;
+}
+
+#header h1
+{
+  width: auto;
+}
+
+#presentation
+{
+  margin-left: 15%;
+  margin-top: 20%;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 2px solid #3C82B8;
+  -moz-border-radius: 10px;
+  background-color: white;
+  width: 70%;
+  -moz-box-shadow: 1px 1px 10px lightgrey;
+  padding: 10px;
+}
+
+#onglet
+{
+  display: none;
+}
+
+#buttonSubmit
+{
+  float: right;
+  height: 30px;
+  width: 90px;
+  margin-right: 100px;
+  margin-top: 40px;
+  background-color: #F7DDAF;
+  font-size: 1em;
+}
+
+#choicesOption
+{
+  margin-left: 30%;
+  border: 1px solid;
+  margin-top: 30px;
+  background-color: white;
+  width: 300px;
+}
+
+#choicesOption ul
+{
+  list-style-type: none; 
+}
+
+#ajouter
+{
+    display: none;
+}
+
+#menuAdmin
+{
+
+}
+
+#menuAdmin p
+{
+    display: inline;
+    margin: 10px;
+}
+
+#liste
+{
+    margin-left: 300px;
+    margin-top: 50px;
+}
+
+#cc
+{
+    font-weight: bold;
+    font-style: italic;
+    color: #1985B5 !important;
+    cursor: pointer;
+    margin-left: 250px;
+}
+
+#lien
+{
+    font-style: italic;
+    margin-left: 200px;
+    margin-top: 50px;
+    color: #1A6F93;
+}
+
+#allBarcode a
+{
+    font-weight:bold;
+    font-style:italic;
+    color: #dc143c;
+    float: right;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#allBarcode
+{
+    margin-top: 20px;
+    padding-bottom: 50px;
+    width: 100%;
+}
+
+#liste p
+{
+    padding: 10px;
+}
+
+#boutons
+{
+    margin-bottom:20px;
+}
+
+#logo
+{
+    margin-left:10px;
+    margin-top: -105px;
+    position: absolute;
+}
+
+#listeOption
+{
+    background-color: white;
+    margin-top: 20px;
+    -moz-box-shadow : 2px 2px 2px #ccc;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+#listeOption thead
+{
+    background-color: #E7EEF6;
+}
+
+#listeOption tbody
+{
+    padding: 5px;
+}
+
+#ajouterTableau
+{
+    font-size: 0.9em;
+    text-align: center;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+#ajouterTableau tr
+{
+    margin-bottom: 5px;
+}
+
+#ajouterTableau td
+{
+    padding: 2px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.help
+{
+    font-style: italic;
+    font-size: 0.9em;
+    color: #A7B1BC;
+    text-align: center;
+    border: none;
+}
+
+.label
+{
+    background-color: #E7EEF6;
+}

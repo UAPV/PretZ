@@ -1,0 +1,9 @@
+
+
+uapvAuthProfileSimulate:
+  url:   /uapvAuthProfile/simulate
+  param: { module: uapvAuthProfile, action: simulate }
+
+uapvAuthProfileRestore:
+  url:   /uapvAuthProfile/restore
+  param: { module: uapvAuthProfile, action: restore }

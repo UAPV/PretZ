@@ -1,0 +1,9 @@
+## YAML Template.
+---
+
+level:
+   gestionnaire:
+     name: gestionnaire
+
+   administrateur:
+     name: administrateur

@@ -1,0 +1,77 @@
+
+category:
+  class: sfPropel15RouteCollection
+  options:
+    model:                category
+    module:               category
+    prefix_path:          /category
+    column:               id
+    with_wildcard_routes: true
+
+product:
+  class: sfPropel15RouteCollection
+  options:
+    model:                Product
+    module:               product
+    prefix_path:          /product
+    column:               id
+    with_wildcard_routes: true
+
+options:
+  class: sfPropel15RouteCollection
+  options:
+    model:                option
+    module:               option
+    prefix_path:          /option
+    column:               id
+    with_wildcard_routes: true
+
+main:
+  class: sfPropel15RouteCollection
+  options:
+    model:                main
+    module:               main
+    prefix_path:          /main
+    column:               id
+    with_wildcard_routes: true
+
+liste:
+  class: sfPropel15RouteCollection
+  options:
+    model:                liste
+    module:               liste
+    prefix_path:          /liste
+    column:               id
+    with_wildcard_routes: true
+
+service:
+  class: sfPropel15RouteCollection
+  options:
+    model:                service
+    module:               service
+    prefix_path:          /service
+    column:               id
+    with_wildcard_routes: true
+
+Administrateurs:
+  class: sfPropel15RouteCollection
+  options:
+    model:                Administrateurs
+    module:               Administrateurs
+    prefix_path:          /Administrateurs
+    column:               id
+    with_wildcard_routes: true
+
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# generic rules
+# please, remove them by adding more specific rules
+
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

@@ -1,0 +1,29 @@
+## YAML Template.
+---
+default:
+  http_metas:
+    content-type: text/html
+
+indexSuccess:
+  stylesheets: [jquery.jqplot.css, stat.css, main.css ]
+  javascripts: [ stat.js ]
+
+produitSuccess:
+  stylesheets: [jquery.jqplot.css, stat.css, main.css ]
+  javascripts: [ stat.js ]
+
+categSuccess:
+  stylesheets: [jquery.jqplot.css, stat.css, main.css ]
+  javascripts: [ stat.js ]
+
+historiqueSuccess:
+  stylesheets: [jquery.jqplot.css, stat.css, main.css ]
+  javascripts: [ stat.js ]
+
+sortieSuccess:
+  stylesheets: [jquery.jqplot.css, stat.css, main.css ]
+  javascripts: [ stat.js ]
+
+all:
+  has_layout:     true
+  layout:         layout

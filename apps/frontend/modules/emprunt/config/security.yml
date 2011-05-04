@@ -1,0 +1,6 @@
+## YAML Template.
+
+accueil:
+  is_secure:   on
+  credentials: [[admin,superadmin]]
+

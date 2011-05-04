@@ -1,0 +1,116 @@
+# config/schema.yml
+propel:
+  category:
+    id:             ~
+    name:           { type: varchar(255), required: true, unique: true }
+    description:    { type: varchar(400) }
+    logo:           { type: varchar(255) }
+    created_at:     ~
+
+  lend:
+    id:           ~
+    idUser:       { type: integer, foreignTable: user, foreignReference: id, required: true }
+    idAdmin:      { type: integer, foreignTable: admin, foreignReference: id, required: true }
+    state:        { type: varchar(255), required: true }
+    created_at:   { type: timestamp }
+    retourDate:   { type: timestamp }
+    retour:       { type: integer, required: true, default: 0 }
+
+  lend_product:
+    _attributes:   { isCrossRef: true }
+    id:            ~
+    idProduct:     { type: integer, foreignTable: product, foreignReference: id, required: true, onDelete: cascade }
+    idLend:        { type: integer, foreignTable: lend, foreignReference: id, required: true, onDelete: cascade }
+    state:         { type: boolean, required: true, default: 0 }
+    dateRetour:    { type: timestamp }
+
+  product:
+    id:            ~
+    name:          { type: varchar(255), required: true }
+    description:   { type: varchar(255) }
+    brand:         { type: varchar(255) }
+    state:         { type: boolean, required: true, default: 0 }
+    barcode:       { type: varchar(255), unique: true }
+    dateBuying:    { type: date, required: true }
+    comments:      { type: varchar(1000) }
+    referant:      { type: integer, required: true, default: 0 }
+    created_at:    ~
+    retourPrevu:   { type: date, required: false }
+
+  product_categ:
+    _attributes:  { isCrossRef: true }
+    id:           ~
+    idProduct:    { type: integer, foreignTable: product, foreignReference: id,  primaryKey: true, required: true, onDelete: cascade }
+    idCateg:      { type: integer, foreignTable: category, foreignReference: id, primaryKey: true, required: true, onDelete: cascade }
+
+  connection:
+    id:          ~
+    idUser:      { type: integer, foreignTable: user, foreignReference: id, required: true, onDelete: cascade }
+    waiting:     { type: integer, required: true, default: 1}
+    order:       { type: integer, required: true}
+    created_at:  ~
+
+  user:
+    id:             ~
+    name:           { type: varchar(255), required: true }
+    uid:            { type: varchar(255), required: true, unique: true }
+    idService:      { type: integer, foreignTable: service, foreignReference: id, required: false }
+    status:         { type: varchar(255), required: true }
+    nbJokers:       { type: integer, default: 0 }
+    email:          { type: varchar(255) }
+    created_at:     ~
+
+  student_user:
+    _attributes: { isCrossRef: true }
+    id:          ~
+    idStudent:   { type: integer, foreignTable: student, foreignReference: id, required: true, onDelete: cascade }
+    idUser:      { type: integer, foreignTable: user, foreignReference: id, required: true, onDelete: cascade }
+
+  student:
+    id:         ~
+    name:       { type: varchar(255), required: true, unique: true }
+    uid:        { type: varchar(255), required: true, unique: true }
+    
+  admin:
+    id:         ~
+    name:       { type: varchar(255), required: true, unique: true }
+    idLevel:    { type: integer, foreignTable: level, foreignReference: id, required: true }
+    active:     { type: integer, required: true, default: 1 }
+    created_at: ~
+
+  level:
+    name:   { type: varchar(255), required: true, default: 0 }
+    created_at: ~
+
+  option:
+    automail:   { type: integer, required: true, default: 1 }
+    created_at: ~
+
+  template:
+    id:             ~
+    logo:           { type: varchar(255) }
+    back_color:     { type: varchar(255) }
+    menu_color:     { type: varchar(255) }
+    nameTemplate:   { type: varchar(255) }
+    url:            { type: varchar(255) }
+    nameStructure:  { type: varchar(255) }
+    colorMessage:   { type: varchar(255) }
+    active:         { type: integer, default: 0 }
+
+  product_user:
+    _attributes:  { isCrossRef: true }
+    id:           ~
+    idProduct:    { type: integer, foreignTable: product, foreignReference: id, required: true }
+    idUser:       { type: integer, foreignTable: user, foreignReference: id, required: true }
+
+  service:
+    id:           ~
+    name:         { type: varchar(255), required: true, unique: true }
+    nomPersonne:  { type: varchar(255), required: true }
+    email:        { type: varchar(255), required: true }
+    created_at:   ~
+
+  option_ip:
+    id:           ~
+    address:      { type: varchar(255), required: true }
+    created_at:   ~

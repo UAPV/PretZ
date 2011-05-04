@@ -1,0 +1,7 @@
+q
+
+--Cette ligne, et les suivantes ci-dessous, seront ignorées--
+
+M    stat/actions/actions.class.php
+M    emprunt/actions/actions.class.php
+M    stat/config/view.yml

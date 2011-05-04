@@ -1,0 +1,21 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+
+  http_metas:
+    content-type: text/html
+
+  metas:
+    #title:        gestion de pret
+    #description:  application internet pret de materiel avec code-barres
+    #keywords:     application, emprunt, gestion, code-barres
+    #language:     fr
+    #robots:       index, follow
+
+  stylesheets:    [main.css, admin.css, jquery-ui-1.8.5.custom.css, jquery.alerts.css]
+
+  javascripts:    [jquery.js, jquery-ui-1.8.5.custom.min.js, jquery.alerts.js, jquery.ui.datepicker-fr.js, listeStudent.js]
+
+  has_layout:     true
+  layout:         layout

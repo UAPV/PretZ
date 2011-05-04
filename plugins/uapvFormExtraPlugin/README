@@ -1,0 +1,203 @@
+
+uapvFormExtraPlugin : Description
+===============================================================================
+
+Ce plugin permet de regrouper tous les outils et développements récurrents dans les formulaires ; il est fortement lié au plugin uapvAuthPlugin qui doit être installé.
+
+Ce plugin possède plusieurs modules :
+  
+  * autocomplete : ce module est associé au widget uapvWidgetFormAutocompleter 
+                   qui permet de faire de l'autocompletion sur l'entrée clavier, en
+                   allant chercher dans le Ldap, une base de données, etc... L'action
+                   appelée en AJAX doit juste être écrite (elle existe déjà pour le
+                   Ldap).
+
+Particularité de la completion Ldap
+-----------------------------------
+
+L'action de complétion sur un annuaire Ldap utilise la variable app_profile_var_translation pour
+connaître la liste des attributs à retourner en ajax au widget. Pour plus d'infos se référer au
+fichier README de uapvAuthPlugin.
+
+Complétion Appig
+----------------
+
+La complétion Appig nécessite l'installation du plugin uapvAppigPlugin.
+
+
+
+Installation
+===============================================================================
+
+A la racine du projet :
+
+    php symfony plugin:publish-assets
+
+Et voilà !
+
+
+Par défaut l'autocomplétion s'effectue à partir de 5 caractères tapés mais vous
+pouvez le configurer en ajoutant ces lignes dans `apps/frontend/config/app.yml` :
+
+    all:
+      uapv_form_extra_autocomplete:
+        query_length: 3
+
+
+On doit également autoriser les modules qui seront utilisés (`apps/frontend/config/settings.yml`) :
+
+    all:
+      .settings:
+        enabled_modules: [..., autocomplete]
+
+
+Pour l'autocompletion Ldap il est indispensable d'avoir défini les correspondances
+des attributs dans `apps/frontend/config/app.yml` :
+
+    all:
+      profile:
+        var_translation:
+          uid: uid
+          name: sn
+          surname: givenname
+          mail: mail
+          cn: cn
+          affectation: supannaffectation
+          uapvharpege: uapvharpege
+
+
+Utilisation
+===============================================================================
+
+
+Widgets d'autocomplétion
+------------------------
+
+La classe mère de complétion (uapvWidgetFormAutocompleter) est une classe fille de sfWidgetFormAutocompleter.
+Cette classe corrige un bug de sfWidgetFormAutocompleter et modifie l'affichage des propositions
+
+Nous l'avons dérivée en plusieurs sous classes afin de fournir de raccourcis pour la complétion
+d'éléments couramment utilisés au CRI :
+
+Classes héritant de uapvWidgetFormAutocompleter :
+
+* uapvWidgetFormLdapAutocompleter       : Complétion d'utilisateur depuis le LDAP
+* uapvWidgetFormAppigAutocompleter      : Complétion de données depuis Appig
+
+Classes héritant de uapvWidgetFormPropelAutocompleter
+
+* uapvWidgetFormAppigPersAutocompleter    : Complétion d'utilisateurs depuis Appig
+* uapvWidgetFormAppigEnsAutocompleter     : Complétion d'enseignements depuis Appig // TODO
+* etc ...
+
+Exemple de complétion avec Ldap :
+
+<?php  echo uapvLdapAutocompleteInput('uid', 'cn', 'uid', 'cn', 'affectation', 'uapv_form_extra_input', 20, "ex: platonic..", uapvFormExtraUtils::$TOUS); ?>
+
+    $this->widgetSchema['auto'] =  new uapvWidgetFormLdapAutocompleter (
+      array ('suggest_secondValue' => "affectation"),   // options
+      array ('placeholder' => "Taper un nom")           // attributs
+    );
+
+
+### Description des options ( /* TODO  LISTE DES OPTIONS A METTRE A JOUR!! */ ) :
+
+-------------------------------------------------------------------------------------------------------------
+| Paramètre             | Description                               |        Valeurs par défaut             |
+|                       |                                           | Ldap              | AppigPers         |
+-------------------------------------------------------------------------------------------------------------
+| search_attr           | nom de l'attribut sur lequel la recherche | cn                | Nom               |
+|                       | sera réalisée                             |                   |                   |
+-------------------------------------------------------------------------------------------------------------
+| returned_attr         | nom de l'attribut qui sera utilisé pour   | uid               | Pers              |
+|                       | identifier les éléments retournés         |                   |                   |
+-------------------------------------------------------------------------------------------------------------
+| suggest_mainValue     | nom de l'attribut affiché à l'utilisateur | cn                | Prenom.' '.Nom    |
+|                       | dans la liste des propositions            |                   |                   |
+-------------------------------------------------------------------------------------------------------------
+| suggest_secondValue   | nom de l'attribut affiché en dessous de   |                   |                   |
+|                       | suggest_mainValue (facultatif)            |                   |                   |
+-------------------------------------------------------------------------------------------------------------
+| url                   | URL effectuant la completion              | autocomplete/appig| autocomplete/ldap |
+-------------------------------------------------------------------------------------------------------------
+| value_callback        | Callback utilisé pour remplacer l'id d'un |           $this->toString()           |
+|                       | élément par un string (lorsqu'un input a  |                                       |
+|                       | une valeur par défaut)                    |                                       |
+-------------------------------------------------------------------------------------------------------------
+| config                | configuration transmise au plugin jquery  |                                       |
+|                       | type: array() ou json. Voir ci dessous    |                                       |
+-------------------------------------------------------------------------------------------------------------
+
+
+### Liste des options transmises au plugin jquery
+
+Il est possible de transmettre des options supplémentaires au plugin jquery
+par le biais de l'option "config" du widget. Cette option peut correspondre à
+un tableau php ou un string au format json. Attention pour certains paramètres
+il vaut mieux écrire le string json manuellement pour éviter des conversions
+incorrectes (function () {} remplacé par "function () {}" par exemple).
+
+Les options disponibles et leurs valeurs par défaut sont les suivantes :
+
+    {
+      inputClass: "ac_input",
+      resultsClass: "ac_results",
+      loadingClass: "ac_loading",
+      minChars: 1,
+      delay: 400,
+      matchCase: false,
+      matchSubset: true,
+      matchContains: false,
+      cacheLength: 10,
+      max: 100,
+      mustMatch: false,
+      extraParams: {},
+      selectFirst: true,
+      formatItem: function(row) { return row[0]; },
+      formatMatch: null,
+      autoFill: false,
+      width: 0,
+      multiple: false,
+      multipleSeparator: ", ",
+      highlight: function () { /* voir source plugin */ },
+      scroll: true,
+      scrollHeight: 180
+    }
+
+
+Afficher un champ d'autocompletion en dehors d'un Form
+------------------------------------------------------
+
+Pour se faire il est possible d'utiliser un helper :
+
+<?php
+use_helper("uapvForm");
+echo uapvLdapAutocompleteInput("libchoix", "name", "name","cn", "affectation", "uapv_form_extra_input", 25, "Taper un nom",  uapvFormExtraUtils::$TOUS);
+?>
+
+Ce helper prend en charge les paramètres suivants :
+
+* $inputName,
+* $searchedField = "name",
+* $returnedField = "uid",
+* $suggestMainValue = "cn",
+* $suggestSecondValue = "affectation",
+* $class = "uapv_form_extra_input uapv_ac_pers",
+* $size = "20",
+* $placeHolder = "Tapez un nom" ,
+* $groupe = 'personnels'
+
+La dernière option groupe peut prendre les valeurs suivantes :
+
+* "enseignants"
+* "administratifs"
+* "etudiants"
+* "anciens-etudiants"
+* "tous"
+
+
+Sources d'erreurs fréquentes
+------------------
+
+- Vous utilisez JQueryUI au lieu de JQuery : JQueryUI contient déjà un module d'autocompletion. Notre module UAPV ne fonctionnera donc pas.  
+  Solution : vous devez retélécharger les sources de JQueryUI en désactivant le module d'autocompletion: ;) => voir page : http://jqueryui.com/download#ui.autocomplete.js

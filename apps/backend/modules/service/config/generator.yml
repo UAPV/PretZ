@@ -1,0 +1,29 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           Service
+    theme:                 admin15
+    non_verbose_templates: true
+    with_show:             false
+    singular:              Service
+    plural:                Services
+    route_prefix:          service
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        name :        { label : Intitulé }
+        email :       { label : Email }
+        nomPersonne : { label : Nom du référant }
+      list:
+        title: Liste des services
+        max_per_page: 8
+        display: [=name, email, nomPersonne ]
+      filter:
+        display: [=name, email, nomPersonne]
+      form:    ~
+      edit:    ~
+      new:
+        display: [=name, nomPersonne, email]

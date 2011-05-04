@@ -1,0 +1,80 @@
+a {
+    color: black !important;
+}
+
+.listeMaterielContent {
+    width: 550px;
+}
+
+.tableCateg {
+    width: 100%;
+    margin-top: 20px;
+    background-color: white;
+    border-color: #ccc;
+    border-collapse: collapse;
+}
+
+.tableCateg caption {
+    text-align: left;
+    background-color: #e6e6fa;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.dateRetour {
+    font-style: italic;
+    width: 70px;
+}
+
+.icon {
+    width: 30px;
+}
+
+.tableCateg tr:hover {
+    background-color: #f5f5dc;
+}
+
+.tableCateg th {
+    font-size: 1em;
+    font-weight: normal;
+    background-color: #ccc;
+}
+
+#liens {
+    width: 500px;
+    overflow: auto;
+}
+
+li {
+  width: 50%;
+  list-style: none;
+  font-size: 1.1em;
+  padding-bottom: 3px;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.name {
+    width: 200px;
+    display: block;
+    border: none;
+}
+
+.name a {
+    display: block;
+}
+
+.desc {
+    width: 250px;
+}
+
+.name:hover {
+    cursor: pointer;
+    border: none;
+}

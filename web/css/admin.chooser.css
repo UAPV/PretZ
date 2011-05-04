@@ -1,0 +1,122 @@
+/* admin chooser */
+
+body{
+    padding : 0!important;
+}
+
+#adminChooser_div{
+    padding: 20px;
+    width: 5%;
+}
+
+#listeAdmins-div table {
+    margin: 20px;
+    width:300px;
+}
+
+#listeAdmins-div table tr td, #listeAdmins-div table tr th{
+    padding: 5px 10px;
+    border: 0px;
+}
+
+#listeAdmins-div table tr td.delete{
+    text-align: right;
+    padding:5px 10px 5px 80px;;
+}
+
+#listeAdmins-div table tr {
+    border: 1px solid grey;
+}
+
+#listeAdmins-div table tr th{
+    text-align: center;
+}
+
+#listeAdmins-div table tr td img{
+    margin: 5px;
+}
+
+#listeAdmins-div table tr td.add{
+    text-align: center;
+}
+
+table {
+    position: relative;
+    border: medium solid #676767;
+    border-collapse: collapse;
+    /*width: 80%;*/
+    margin-left: 10px;
+    /*margin-right: 2%*/
+}
+
+thead th{
+    text-align: left ;
+}
+
+th {
+    /*font-family: monospace;*/
+    font-family : arial,helvetica,sans-serif;
+    border: thin solid 	#676767 ;
+    font-size: 13px;
+    padding: 5px ;
+    color: #1E52A1;
+    background-color: 	#D0D0D0 ;
+    text-align: right;
+    max-width : 200px;
+}
+
+td {
+    font-family: sans-serif;
+    border: thin solid #676767 ;
+    /*border-right-style: none;
+    border-left-style: none; */
+    /*width: auto;*/
+    padding: 5px;
+    text-align: left;
+    background-color: #ffffff;
+    padding-left: 5px;
+}
+caption {
+    font-family: sans-serif;
+}
+
+tfoot tr td{
+    text-align:center !important;
+}
+
+.tab-infos
+{
+    position: relative;
+    font-size: 85%;
+    color: #A69F9F;
+}
+
+.tab-infos-left
+{
+    display: inline;
+}
+
+#tab-infos-right- not-hidden
+{
+    right:0;
+    position: absolute;
+
+}
+
+#tab-infos-right
+{
+    display: none;
+    right:0;
+    position: absolute;
+
+}
+
+.hideMe
+{
+   display: none;
+}
+
+.notif
+{
+    font-style: italic;
+}

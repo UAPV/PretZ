@@ -1,0 +1,251 @@
+/*
+    Document   : listeEmprunt
+    Created on : 4 oct. 2010, 11:57:00
+    Author     : fanny
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+#columnRight
+{
+    float: right;
+    margin-top: 100px;
+    margin-right: 50px;
+    width: 60%;
+}
+
+ #columnLeft
+{
+    float: left;
+    margin-left:50px;
+    margin-top: 40px;
+}
+
+#liste
+{
+    -moz-border-radius: 10px;
+    -moz-box-shadow: 1px 1px 10px lightgrey;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #A6C9E2;
+    border-left: 1px solid #A6C9E2;
+    border-right: 1px solid #A6C9E2;
+    position: relative;
+}
+
+#listeAttente
+{
+    border: 1px solid #A6C9E2;
+    -moz-border-radius: 10px;
+    -moz-box-shadow: 1px 1px 10px lightgrey;
+    background-color: white;
+    margin: 10px;
+}
+
+#listeAttente td
+{
+    border: 1px solid lavender;
+    margin: 0;
+    height: auto;
+}
+
+#listeAttente tr
+{
+    cursor: pointer;
+}
+
+#oublieMdp
+{
+    background-color: white;
+}
+
+#oublie
+{
+    margin-top: 50px;
+    -moz-border-radius: 10px;
+    -moz-box-shadow: 1px 1px 10px lightgrey;
+    border-bottom: 1px solid #A6C9E2;
+    border-left: 1px solid #A6C9E2;
+    border-right: 1px solid #A6C9E2;
+    position: relative;
+}
+
+#oublieMdp #autocomplete_nom
+{
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+
+#autocomplete_nom
+{
+    margin-bottom: 20px;
+}
+
+#validateInvite
+{
+    background-color: white;
+    padding: 10px;
+}
+
+#intervenant
+{
+    width: 255px;
+    -moz-border-radius: 10px;
+    -moz-box-shadow: 1px 1px 10px lightgrey;
+    border-bottom: 1px solid #A6C9E2;
+    border-left: 1px solid #A6C9E2;
+    border-right: 1px solid #A6C9E2;
+    margin-top: 30px;
+}
+#retour
+{
+    padding: 5px;
+    float: right;
+    margin-top: 150px;
+    margin-right: 20px;
+}
+
+#autocomplete_nom
+{
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+#retour:hover, #validate:hover, #inter_valid:hover
+{
+    cursor: pointer;
+}
+
+#info
+{
+    display: none;
+    background-color: #F2EDE7;
+}
+
+#info p
+{
+    background-color: white;
+    margin-top: 10px;
+    height: 30px;
+    padding: 5px;
+}
+
+#listeEmprunt
+{
+    border: 1px solid #A6C9E2;
+    -moz-border-radius: 10px;
+    -moz-box-shadow: 1px 1px 10px lightgrey;
+    background-color: white;
+    margin-left: 50px;
+    margin-top: 50px;
+    width: 300px;
+}
+
+#listeEmprunt td
+{
+    border: 1px solid lavender;
+    margin: 0;
+    height: 20px;
+}
+
+#validate
+{
+    -moz-border-radius: 10px;
+    -moz-box-shadow: 1px 1px 10px lightgrey;
+    float:right;
+    margin-top: -7px;
+    display: none;
+}
+
+#referantEnter
+{
+    width: 250px;
+    height: 150px;
+    display: none;
+}
+
+#barcode
+{
+    width: 350px;
+    margin-top: 100px;
+    padding-left: 25%;
+    padding-bottom: 20px;
+}
+
+#emprunt
+{
+    -moz-border-radius: 10px;
+    -moz-box-shadow: 1px 1px 10px lightgrey;
+    position: relative;
+    border-bottom: 1px solid #A6C9E2;
+    border-left: 1px solid #A6C9E2;
+    border-right: 1px solid #A6C9E2;
+    margin-top: -80px;
+}
+
+#titleEmprunt
+{
+    height: 20px;
+    margin: auto;
+}
+
+#inter_valid
+{
+    margin-top: -5px;
+}
+
+#test
+{
+    background-color: #8A7E6B;
+    height: 20px;
+}
+
+#logo
+{
+    margin-left: 40px;
+}
+
+input.dateRetour
+{
+    width: 90px;
+    background-color: #DFEFFC;
+    opacity:0.8;
+}
+
+#barcode img
+{
+    cursor: pointer;
+}
+
+.option
+{
+    width: 90px;
+}
+
+.optionSup
+{
+    width: 30px;
+}
+
+.ui-datepicker
+{
+    width:12em;
+    padding:0;
+}
+
+#presentation
+{
+    float: right;
+    padding-top: 20px;
+}
+
+#presentation p
+{
+    font-size: 1.1em;
+    color: #524F5F;
+    font-style: italic;
+}

@@ -1,0 +1,29 @@
+generator:
+  class: sfPropelGenerator
+  param:
+    model_class:           Option
+    theme:                 admin15
+    non_verbose_templates: true
+    with_show:             false
+    singular:              Option
+    plural:                Options
+    route_prefix:          option
+    with_propel_route:     1
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        nameTemplate:        { label: Nom du template}
+        nameStructure:       { label: Nom de la structure}
+        url:                 { label: Adresse internet }
+        logo:                { label: Logo }
+      list:
+        title: Liste des options
+        batch_actions:
+          activer: ~
+      filter:
+        display: [=nameTemplate,url]
+      form: ~
+      new:  ~
+

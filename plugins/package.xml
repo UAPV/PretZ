@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packagerversion="1.8.1" version="2.0" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>firesymfonyPlugin</name>
+ <channel>pear.symfony-project.com</channel>
+ <summary>FireSymfony - web debug toolbar for Firebug</summary>
+ <description>Displays the web debug toolbar information as a Firebug extension</description>
+ <lead>
+  <name>Alvaro VIDELA</name>
+  <user>videlalvaro</user>
+  <email>videlalvaro@gmail.com</email>
+  <active>yes</active>
+ </lead>
+ <date>2009-09-07</date>
+ <time>13:37:00</time>
+ <version>
+  <release>1.1.12</release>
+  <api>1.1.0</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://www.symfony-project.org/license">MIT license</license>
+ <notes>
+-
+ </notes>
+ <contents>
+  <dir name="/">
+   <file md5sum="213ff8fab66a4cb1827db7c00805dfd0" name="config/firesymfonyPluginConfiguration.class.php" role="data"/>
+   <file md5sum="e0fc483914f35c31395d17f9d93cb359" name="lib/fsNoJsonException.class.php" role="data"/>
+   <file md5sum="dddd9053f232bb56b5c8c7ed4562c063" name="lib/fsWebDebugForSf10.class.php" role="data"/>
+   <file md5sum="56484565227adfe5c652eedbc96d12fc" name="lib/fsWebDebugForSf11.class.php" role="data"/>
+   <file md5sum="5cd4b8c1e00bd9f977df9e03de850721" name="lib/fsWebDebugForSf12.class.php" role="data"/>
+   <file md5sum="d6c379c0581e277e0d67f4cd41fcbade" name="lib/fsWebDebugLogger.class.php" role="data"/>
+   <file md5sum="03e207d9bad075b0c6d398d529a70d6d" name="lib/fsWebDebugPanelCache.class.php" role="data"/>
+   <file md5sum="1ad8b3239b166b406979217bb0ce76b6" name="lib/fsWebDebugPanelConfig.class.php" role="data"/>
+   <file md5sum="86f6962a4052dcc892fa9fbe722bbbdc" name="lib/fsWebDebugPanelDatabase.class.php" role="data"/>
+   <file md5sum="2af7529d0a136f4eeea21954e2f8179a" name="lib/fsWebDebugPanelInfo.class.php" role="data"/>
+   <file md5sum="aac14ec206659ae7a78c86169d9f99de" name="lib/fsWebDebugPanelLogs.class.php" role="data"/>
+   <file md5sum="fa2e6c2737d7ae4ab1b618347fb9d77d" name="lib/fsWebDebugPanelMemory.class.php" role="data"/>
+   <file md5sum="aa1b2528dccd875f207a6fbd95c93265" name="lib/fsWebDebugPanelTimer.class.php" role="data"/>
+   <file md5sum="248456d49646ed9d8da450b30059dbd6" name="LICENSE" role="data"/>
+   <file md5sum="10766f048cb15b2b9aaa83a14ce115c9" name="README" role="data"/>
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.2.4</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.1</min>
+   </pearinstaller>
+   
+  </required>
+ </dependencies>
+ <phprelease/>
+ <changelog>
+  <release>
+   <version>
+    <release>1.1.12</release>
+    <api>1.1.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <license uri="http://www.symfony-project.org/license">MIT license</license>
+   <license>MIT</license>
+   <date>2009-09-07</date>
+   <notes>
+Modified package.xml to support symfony 1.2
+   </notes>
+  </release>
+ </changelog>
+</package>

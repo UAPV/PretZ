@@ -1,0 +1,6 @@
+## YAML Template.
+---
+
+option:
+  mailDefault:
+    automail: 0

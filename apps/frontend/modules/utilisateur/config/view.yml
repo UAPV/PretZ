@@ -1,0 +1,11 @@
+indexSuccess:
+  stylesheets: [identification.css]
+  javascripts: [users.js]
+
+showSuccess:
+  stylesheets: [identification.css]
+  javascripts: [users.js]
+
+editSuccess:
+  stylesheets: [identification.css]
+  javascripts: [users.js]

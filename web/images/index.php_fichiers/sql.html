@@ -1,0 +1,558 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xml:lang="fr" xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="http://localhost/phpmyadmin/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="http://localhost/phpmyadmin/favicon.ico" type="image/x-icon">
+    <title>phpMyAdmin</title>
+    <link rel="stylesheet" type="text/css" href="sql_data/phpmyadmin.css">
+    <link rel="stylesheet" type="text/css" href="sql_data/print.css" media="print">
+    <meta name="robots" content="noindex,nofollow">
+<script type="text/javascript">
+//<![CDATA[
+try {
+    // can't access this if on a different domain
+    var topdomain = top.document.domain;
+    // double-check just for sure
+    if (topdomain != self.document.domain) {
+        alert("Redirecting...");
+        top.location.replace(self.document.URL.substring(0, self.document.URL.lastIndexOf("/")+1));
+    }
+}
+catch(e) {
+    alert("Redirecting... (error: " + e);
+    top.location.replace(self.document.URL.substring(0, self.document.URL.lastIndexOf("/")+1));
+}
+//]]>
+</script>
+<script src="sql_data/mootools.js" type="text/javascript"></script>
+<script src="sql_data/mootools-more.js" type="text/javascript"></script>
+<script src="navigation_data/functions.js" type="text/javascript"></script>
+<script src="sql_data/tooltip.js" type="text/javascript"></script>
+<script type="text/javascript">
+// <![CDATA[
+// Updates the title of the frameset if possible (ns4 does not allow this)
+if (typeof(parent.document) != 'undefined' && typeof(parent.document) != 'unknown'
+    && typeof(parent.document.title) == 'string') {
+    parent.document.title = 'localhost / localhost / pretz / template | phpMyAdmin 3.3.7deb1';
+}
+
+var PMA_messages = new Array();
+PMA_messages['strFormEmpty'] = 'Formulaire incomplet !';
+PMA_messages['strNotNumber'] = 'Ce n\'est pas un nombre !';
+PMA_messages['strClickToSelect'] = 'Cliquer pour sélectionner';
+PMA_messages['strClickToUnselect'] = 'Cliquer pour désélectionner';
+PMA_messages['strNoDropDatabases'] = '';
+PMA_messages['strDoYouReally'] = 'Voulez-vous vraiment effectuer ';
+PMA_messages['strDropDatabaseStrongWarning'] = 'Vous êtes sur le point de DÉTRUIRE une base de données!';
+PMA_messages['strBLOBRepositoryDisableStrongWarning'] = 'Vous allez DÉSACTIVER un dépôt BLOB!';
+PMA_messages['strBLOBRepositoryDisableAreYouSure'] = 'Êtes-vous certain de vouloir désactiver toutes les références BLOB pour la base pretz?';
+window.parent.addEvent(window, 'load', PMA_TT_init);
+// ]]>
+</script>
+    <meta name="OBGZip" content="true">
+        <!--[if IE 6]>
+    <style type="text/css">
+    /* <![CDATA[ */
+    html {
+        overflow-y: scroll;
+    }
+    /* ]]> */
+    </style>
+    <![endif]-->
+</head><body>
+    <div id="serverinfo">
+<a href="http://localhost/phpmyadmin/main.php?token=d0534b7117418e890618838ed32fe960" class="item">        <img class="icon" src="sql_data/s_host.png" alt="" height="16" width="16"> 
+localhost</a>
+        <span class="separator"><img class="icon" src="sql_data/item_ltr.png" alt="-" height="9" width="5"></span>
+<a href="http://localhost/phpmyadmin/db_structure.php?db=pretz&amp;token=d0534b7117418e890618838ed32fe960" class="item">        <img class="icon" src="sql_data/s_db.png" alt="" height="16" width="16"> 
+pretz</a>
+        <span class="separator"><img class="icon" src="sql_data/item_ltr.png" alt="-" height="9" width="5"></span>
+<a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960" class="item">        <img class="icon" src="sql_data/s_tbl.png" alt="" height="16" width="16"> 
+template</a>
+</div><div id="topmenucontainer">
+<ul id="topmenu">
+<li><a class="tab warning" href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;pos=0" title="La table semble vide!"><img class="icon" src="sql_data/b_browse.png" alt="" height="16" width="16">Afficher</a></li>
+<li class="active"><a class="tabactive" href="http://localhost/phpmyadmin/tbl_structure.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960"><img class="icon" src="sql_data/b_props.png" alt="" height="16" width="16">Structure</a></li>
+<li><a class="tab" href="http://localhost/phpmyadmin/tbl_sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960"><img class="icon" src="sql_data/b_sql.png" alt="" height="16" width="16">SQL</a></li>
+<li><a class="tab warning" href="http://localhost/phpmyadmin/tbl_select.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960" title="La table semble vide!"><img class="icon" src="sql_data/b_search.png" alt="" height="16" width="16">Rechercher</a></li>
+<li><a class="tab" href="http://localhost/phpmyadmin/tbl_tracking.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960"><img class="icon" src="sql_data/eye.png" alt="" height="16" width="16">Suivi</a></li>
+<li><a class="tab" href="http://localhost/phpmyadmin/tbl_change.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960"><img class="icon" src="sql_data/b_insrow.png" alt="" height="16" width="16">Insérer</a></li>
+<li><a class="tab" href="http://localhost/phpmyadmin/tbl_export.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;single_table=true"><img class="icon" src="sql_data/b_tblexport.png" alt="" height="16" width="16">Exporter</a></li>
+<li><a class="tab" href="http://localhost/phpmyadmin/tbl_import.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960"><img class="icon" src="sql_data/b_tblimport.png" alt="" height="16" width="16">Importer</a></li>
+<li><a class="tab" href="http://localhost/phpmyadmin/tbl_operations.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960"><img class="icon" src="sql_data/b_tblops.png" alt="" height="16" width="16">Opérations</a></li>
+<li><a class="tabcaution warning" href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;reload=1&amp;sql_query=TRUNCATE+TABLE+%60template%60&amp;zero_rows=La+table+template+a+%C3%A9t%C3%A9+vid%C3%A9e&amp;goto=tbl_structure.php" onclick="return confirmLink(this, 'TRUNCATE TABLE `template`')" title="La table semble vide!"><img class="icon" src="sql_data/b_empty.png" alt="" height="16" width="16">Vider</a></li>
+<li><a class="tabcaution" href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;reload=1&amp;purge=1&amp;sql_query=DROP+TABLE+%60template%60&amp;goto=db_structure.php&amp;zero_rows=La+table+template+a+%C3%A9t%C3%A9+effac%C3%A9e" onclick="return confirmLink(this, 'DROP TABLE `template`')"><img class="icon" src="sql_data/b_deltbl.png" alt="" height="16" width="16">Supprimer</a></li>
+</ul>
+<div class="clearfloat"></div></div>
+
+<script type="text/javascript">
+//<![CDATA[
+if (window.parent.updateTableTitle) window.parent.updateTableTitle('pretz.template', ' (0)');
+//]]>
+</script>
+<div align="left">
+<div class="success">MySQL n'a retourné aucune ligne. ( Traitement en 0.0003 sec. )</div><code class="sql"><span class="syntax"><span class="syntax_alpha syntax_alpha_reservedWord">SELECT</span>  <span class="syntax_punct">*</span> <br><span class="syntax_alpha syntax_alpha_reservedWord">FROM</span>  <span class="syntax_quote syntax_quote_backtick">`template`</span> <span class="syntax_white syntax_white_newline"></span><br><span class="syntax_alpha syntax_alpha_reservedWord">LIMIT</span> <span class="syntax_digit syntax_digit_integer">0</span> <span class="syntax_punct syntax_punct_listsep">,</span> <span class="syntax_digit syntax_digit_integer">30</span></span></code><div class="tools"><form action="sql.php" method="post">
+<input name="db" value="pretz" type="hidden"><input name="table" value="template" type="hidden"><input name="token" value="d0534b7117418e890618838ed32fe960" type="hidden"><input name="sql_query" value="SELECT * FROM `template`" type="hidden">
+<input name="profiling_form" value="1" type="hidden">
+<input name="profiling" id="profiling" onclick="this.form.submit();" type="checkbox"><label for="profiling">Profilage</label><noscript><input type="submit" value="Exécuter" /></noscript>
+</form>
+ [
+<a href="http://localhost/phpmyadmin/tbl_sql.php?db=pretz&amp;table=template&amp;sql_query=SELECT+%2A+FROM+%60template%60&amp;show_query=1&amp;token=d0534b7117418e890618838ed32fe960#querybox" onclick="window.parent.focus_querywindow('SELECT * FROM `template`'); return false;">Modifier</a>
+] [
+<a href="http://localhost/phpmyadmin/import.php?db=pretz&amp;table=template&amp;sql_query=EXPLAIN+SELECT+%2A+FROM+%60template%60&amp;token=d0534b7117418e890618838ed32fe960">Expliquer SQL</a>
+] [
+<a href="http://localhost/phpmyadmin/import.php?db=pretz&amp;table=template&amp;sql_query=SELECT+%2A+FROM+%60template%60&amp;show_query=1&amp;show_as_php=1&amp;token=d0534b7117418e890618838ed32fe960">Créer source PHP</a>
+] [
+<a href="http://localhost/phpmyadmin/import.php?db=pretz&amp;table=template&amp;sql_query=SELECT+%2A+FROM+%60template%60&amp;show_query=1&amp;token=d0534b7117418e890618838ed32fe960">Actualiser</a>
+]</div></div><br>
+<form method="post" action="tbl_structure.php" name="fieldsForm" id="fieldsForm">
+    <input name="db" value="pretz" type="hidden"><input name="table" value="template" type="hidden"><input name="token" value="d0534b7117418e890618838ed32fe960" type="hidden"><table id="tablestructure" class="data">
+<thead>
+<tr>
+    <th id="th1"></th>
+    <th id="th2">Colonne</th>
+    <th id="th3">Type</th>
+    <th id="th4">Interclassement</th>
+    <th id="th5">Attributs</th>
+    <th id="th6">Null</th>
+    <th id="th7">Défaut</th>
+    <th id="th8">Extra</th>
+    <th colspan="7" id="th9">Action</th>
+</tr>
+</thead>
+<tbody>
+
+<tr class="odd">
+    <td align="center">
+        <input name="selected_fld[]" value="id" id="checkbox_row_1" type="checkbox">
+    </td>
+    <th nowrap="nowrap"><label for="checkbox_row_1"><u>id</u></label></th>
+    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">int(11)</bdo></td>
+    <td></td>
+    <td style="font-size: 70%;" nowrap="nowrap"> </td>
+    <td>Non</td>
+    <td nowrap="nowrap"><i>Aucun</i></td>
+    <td nowrap="nowrap">AUTO_INCREMENT</td>
+    <td align="center">
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;sql_query=SELECT+COUNT%28%2A%29+AS+%60Lignes%60%2C+%60id%60+FROM+%60template%60+GROUP+BY+%60id%60+ORDER+BY+%60id%60">
+            <img src="sql_data/b_browse.png" title="Affiche les valeurs distinctes" alt="Affiche les valeurs distinctes" class="icon" height="16" width="16"></a>
+    </td>
+        <td align="center">
+        <a href="http://localhost/phpmyadmin/tbl_alter.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;field=id">
+            <img src="sql_data/b_edit.png" title="Modifier" alt="Modifier" class="icon" height="16" width="16"></a>
+    </td>
+    <td align="center">
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;sql_query=ALTER+TABLE+%60template%60+DROP+%60id%60&amp;cpurge=1&amp;purgekey=id&amp;zero_rows=La+colonne+id+a+%C3%A9t%C3%A9+effac%C3%A9e" onclick="return confirmLink(this, 'ALTER TABLE `template` DROP `id`')">
+            <img src="sql_data/b_drop.png" title="Supprimer" alt="Supprimer" class="icon" height="16" width="16"></a>
+    </td>
+    <td align="center">
+        
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;sql_query=ALTER+TABLE+%60template%60+DROP+PRIMARY+KEY%2C+ADD+PRIMARY+KEY%28%60id%60%29&amp;zero_rows=Une+cl%C3%A9+primaire+a+%C3%A9t%C3%A9+ajout%C3%A9e+sur+id" onclick="return confirmLink(this, 'ALTER TABLE `template` DROP PRIMARY KEY, ADD PRIMARY KEY(`id`)')">
+            <img src="sql_data/b_primary.png" title="Primaire" alt="Primaire" class="icon" height="16" width="16"></a>
+            
+    </td>
+    <td align="center">
+        
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;sql_query=ALTER+TABLE+%60template%60+ADD+UNIQUE%28%60id%60%29&amp;zero_rows=Un+index+a+%C3%A9t%C3%A9+ajout%C3%A9+sur+id">
+            <img src="sql_data/b_unique.png" title="Unique" alt="Unique" class="icon" height="16" width="16"></a>
+            
+    </td>
+    <td align="center">
+        
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;sql_query=ALTER+TABLE+%60template%60+ADD+INDEX%28%60id%60%29&amp;zero_rows=Un+index+a+%C3%A9t%C3%A9+ajout%C3%A9+sur+id">
+            <img src="sql_data/b_index.png" title="Index" alt="Index" class="icon" height="16" width="16"></a>
+            
+    </td>
+    
+    <td nowrap="nowrap" align="center">
+        <img src="sql_data/bd_ftext.png" title="Texte entier" alt="Texte entier" class="icon" height="16" width="16">
+    </td>
+        
+</tr>
+    
+<tr class="even">
+    <td align="center">
+        <input name="selected_fld[]" value="logo" id="checkbox_row_2" type="checkbox">
+    </td>
+    <th nowrap="nowrap"><label for="checkbox_row_2">logo</label></th>
+    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(255)</bdo></td>
+    <td><dfn title="suédois, insensible à la casse">latin1_swedish_ci</dfn></td>
+    <td style="font-size: 70%;" nowrap="nowrap"> </td>
+    <td>Oui</td>
+    <td nowrap="nowrap"><i>NULL</i></td>
+    <td nowrap="nowrap"></td>
+    <td align="center">
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;sql_query=SELECT+COUNT%28%2A%29+AS+%60Lignes%60%2C+%60logo%60+FROM+%60template%60+GROUP+BY+%60logo%60+ORDER+BY+%60logo%60">
+            <img src="sql_data/b_browse.png" title="Affiche les valeurs distinctes" alt="Affiche les valeurs distinctes" class="icon" height="16" width="16"></a>
+    </td>
+        <td align="center">
+        <a href="http://localhost/phpmyadmin/tbl_alter.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;field=logo">
+            <img src="sql_data/b_edit.png" title="Modifier" alt="Modifier" class="icon" height="16" width="16"></a>
+    </td>
+    <td align="center">
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;sql_query=ALTER+TABLE+%60template%60+DROP+%60logo%60&amp;cpurge=1&amp;purgekey=logo&amp;zero_rows=La+colonne+logo+a+%C3%A9t%C3%A9+effac%C3%A9e" onclick="return confirmLink(this, 'ALTER TABLE `template` DROP `logo`')">
+            <img src="sql_data/b_drop.png" title="Supprimer" alt="Supprimer" class="icon" height="16" width="16"></a>
+    </td>
+    <td align="center">
+        
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;sql_query=ALTER+TABLE+%60template%60+DROP+PRIMARY+KEY%2C+ADD+PRIMARY+KEY%28%60logo%60%29&amp;zero_rows=Une+cl%C3%A9+primaire+a+%C3%A9t%C3%A9+ajout%C3%A9e+sur+logo" onclick="return confirmLink(this, 'ALTER TABLE `template` DROP PRIMARY KEY, ADD PRIMARY KEY(`logo`)')">
+            <img src="sql_data/b_primary.png" title="Primaire" alt="Primaire" class="icon" height="16" width="16"></a>
+            
+    </td>
+    <td align="center">
+        
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;sql_query=ALTER+TABLE+%60template%60+ADD+UNIQUE%28%60logo%60%29&amp;zero_rows=Un+index+a+%C3%A9t%C3%A9+ajout%C3%A9+sur+logo">
+            <img src="sql_data/b_unique.png" title="Unique" alt="Unique" class="icon" height="16" width="16"></a>
+            
+    </td>
+    <td align="center">
+        
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;sql_query=ALTER+TABLE+%60template%60+ADD+INDEX%28%60logo%60%29&amp;zero_rows=Un+index+a+%C3%A9t%C3%A9+ajout%C3%A9+sur+logo">
+            <img src="sql_data/b_index.png" title="Index" alt="Index" class="icon" height="16" width="16"></a>
+            
+    </td>
+    
+    <td nowrap="nowrap" align="center">
+        <img src="sql_data/bd_ftext.png" title="Texte entier" alt="Texte entier" class="icon" height="16" width="16">
+    </td>
+        
+</tr>
+    
+<tr class="odd">
+    <td align="center">
+        <input name="selected_fld[]" value="back_color" id="checkbox_row_3" type="checkbox">
+    </td>
+    <th nowrap="nowrap"><label for="checkbox_row_3">back_color</label></th>
+    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(255)</bdo></td>
+    <td><dfn title="suédois, insensible à la casse">latin1_swedish_ci</dfn></td>
+    <td style="font-size: 70%;" nowrap="nowrap"> </td>
+    <td>Oui</td>
+    <td nowrap="nowrap"><i>NULL</i></td>
+    <td nowrap="nowrap"></td>
+    <td align="center">
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;sql_query=SELECT+COUNT%28%2A%29+AS+%60Lignes%60%2C+%60back_color%60+FROM+%60template%60+GROUP+BY+%60back_color%60+ORDER+BY+%60back_color%60">
+            <img src="sql_data/b_browse.png" title="Affiche les valeurs distinctes" alt="Affiche les valeurs distinctes" class="icon" height="16" width="16"></a>
+    </td>
+        <td align="center">
+        <a href="http://localhost/phpmyadmin/tbl_alter.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;field=back_color">
+            <img src="sql_data/b_edit.png" title="Modifier" alt="Modifier" class="icon" height="16" width="16"></a>
+    </td>
+    <td align="center">
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;sql_query=ALTER+TABLE+%60template%60+DROP+%60back_color%60&amp;cpurge=1&amp;purgekey=back_color&amp;zero_rows=La+colonne+back_color+a+%C3%A9t%C3%A9+effac%C3%A9e" onclick="return confirmLink(this, 'ALTER TABLE `template` DROP `back_color`')">
+            <img src="sql_data/b_drop.png" title="Supprimer" alt="Supprimer" class="icon" height="16" width="16"></a>
+    </td>
+    <td align="center">
+        
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;sql_query=ALTER+TABLE+%60template%60+DROP+PRIMARY+KEY%2C+ADD+PRIMARY+KEY%28%60back_color%60%29&amp;zero_rows=Une+cl%C3%A9+primaire+a+%C3%A9t%C3%A9+ajout%C3%A9e+sur+back_color" onclick="return confirmLink(this, 'ALTER TABLE `template` DROP PRIMARY KEY, ADD PRIMARY KEY(`back_color`)')">
+            <img src="sql_data/b_primary.png" title="Primaire" alt="Primaire" class="icon" height="16" width="16"></a>
+            
+    </td>
+    <td align="center">
+        
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;sql_query=ALTER+TABLE+%60template%60+ADD+UNIQUE%28%60back_color%60%29&amp;zero_rows=Un+index+a+%C3%A9t%C3%A9+ajout%C3%A9+sur+back_color">
+            <img src="sql_data/b_unique.png" title="Unique" alt="Unique" class="icon" height="16" width="16"></a>
+            
+    </td>
+    <td align="center">
+        
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;sql_query=ALTER+TABLE+%60template%60+ADD+INDEX%28%60back_color%60%29&amp;zero_rows=Un+index+a+%C3%A9t%C3%A9+ajout%C3%A9+sur+back_color">
+            <img src="sql_data/b_index.png" title="Index" alt="Index" class="icon" height="16" width="16"></a>
+            
+    </td>
+    
+    <td nowrap="nowrap" align="center">
+        <img src="sql_data/bd_ftext.png" title="Texte entier" alt="Texte entier" class="icon" height="16" width="16">
+    </td>
+        
+</tr>
+    
+<tr class="even">
+    <td align="center">
+        <input name="selected_fld[]" value="menu_color" id="checkbox_row_4" type="checkbox">
+    </td>
+    <th nowrap="nowrap"><label for="checkbox_row_4">menu_color</label></th>
+    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(255)</bdo></td>
+    <td><dfn title="suédois, insensible à la casse">latin1_swedish_ci</dfn></td>
+    <td style="font-size: 70%;" nowrap="nowrap"> </td>
+    <td>Oui</td>
+    <td nowrap="nowrap"><i>NULL</i></td>
+    <td nowrap="nowrap"></td>
+    <td align="center">
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;sql_query=SELECT+COUNT%28%2A%29+AS+%60Lignes%60%2C+%60menu_color%60+FROM+%60template%60+GROUP+BY+%60menu_color%60+ORDER+BY+%60menu_color%60">
+            <img src="sql_data/b_browse.png" title="Affiche les valeurs distinctes" alt="Affiche les valeurs distinctes" class="icon" height="16" width="16"></a>
+    </td>
+        <td align="center">
+        <a href="http://localhost/phpmyadmin/tbl_alter.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;field=menu_color">
+            <img src="sql_data/b_edit.png" title="Modifier" alt="Modifier" class="icon" height="16" width="16"></a>
+    </td>
+    <td align="center">
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;sql_query=ALTER+TABLE+%60template%60+DROP+%60menu_color%60&amp;cpurge=1&amp;purgekey=menu_color&amp;zero_rows=La+colonne+menu_color+a+%C3%A9t%C3%A9+effac%C3%A9e" onclick="return confirmLink(this, 'ALTER TABLE `template` DROP `menu_color`')">
+            <img src="sql_data/b_drop.png" title="Supprimer" alt="Supprimer" class="icon" height="16" width="16"></a>
+    </td>
+    <td align="center">
+        
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;sql_query=ALTER+TABLE+%60template%60+DROP+PRIMARY+KEY%2C+ADD+PRIMARY+KEY%28%60menu_color%60%29&amp;zero_rows=Une+cl%C3%A9+primaire+a+%C3%A9t%C3%A9+ajout%C3%A9e+sur+menu_color" onclick="return confirmLink(this, 'ALTER TABLE `template` DROP PRIMARY KEY, ADD PRIMARY KEY(`menu_color`)')">
+            <img src="sql_data/b_primary.png" title="Primaire" alt="Primaire" class="icon" height="16" width="16"></a>
+            
+    </td>
+    <td align="center">
+        
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;sql_query=ALTER+TABLE+%60template%60+ADD+UNIQUE%28%60menu_color%60%29&amp;zero_rows=Un+index+a+%C3%A9t%C3%A9+ajout%C3%A9+sur+menu_color">
+            <img src="sql_data/b_unique.png" title="Unique" alt="Unique" class="icon" height="16" width="16"></a>
+            
+    </td>
+    <td align="center">
+        
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;sql_query=ALTER+TABLE+%60template%60+ADD+INDEX%28%60menu_color%60%29&amp;zero_rows=Un+index+a+%C3%A9t%C3%A9+ajout%C3%A9+sur+menu_color">
+            <img src="sql_data/b_index.png" title="Index" alt="Index" class="icon" height="16" width="16"></a>
+            
+    </td>
+    
+    <td nowrap="nowrap" align="center">
+        <img src="sql_data/bd_ftext.png" title="Texte entier" alt="Texte entier" class="icon" height="16" width="16">
+    </td>
+        
+</tr>
+    
+<tr class="odd">
+    <td align="center">
+        <input name="selected_fld[]" value="name" id="checkbox_row_5" type="checkbox">
+    </td>
+    <th nowrap="nowrap"><label for="checkbox_row_5">name</label></th>
+    <td nowrap="nowrap"><bdo dir="ltr" xml:lang="en">varchar(255)</bdo></td>
+    <td><dfn title="suédois, insensible à la casse">latin1_swedish_ci</dfn></td>
+    <td style="font-size: 70%;" nowrap="nowrap"> </td>
+    <td>Oui</td>
+    <td nowrap="nowrap"><i>NULL</i></td>
+    <td nowrap="nowrap"></td>
+    <td align="center">
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;sql_query=SELECT+COUNT%28%2A%29+AS+%60Lignes%60%2C+%60name%60+FROM+%60template%60+GROUP+BY+%60name%60+ORDER+BY+%60name%60">
+            <img src="sql_data/b_browse.png" title="Affiche les valeurs distinctes" alt="Affiche les valeurs distinctes" class="icon" height="16" width="16"></a>
+    </td>
+        <td align="center">
+        <a href="http://localhost/phpmyadmin/tbl_alter.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;field=name">
+            <img src="sql_data/b_edit.png" title="Modifier" alt="Modifier" class="icon" height="16" width="16"></a>
+    </td>
+    <td align="center">
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;sql_query=ALTER+TABLE+%60template%60+DROP+%60name%60&amp;cpurge=1&amp;purgekey=name&amp;zero_rows=La+colonne+name+a+%C3%A9t%C3%A9+effac%C3%A9e" onclick="return confirmLink(this, 'ALTER TABLE `template` DROP `name`')">
+            <img src="sql_data/b_drop.png" title="Supprimer" alt="Supprimer" class="icon" height="16" width="16"></a>
+    </td>
+    <td align="center">
+        
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;sql_query=ALTER+TABLE+%60template%60+DROP+PRIMARY+KEY%2C+ADD+PRIMARY+KEY%28%60name%60%29&amp;zero_rows=Une+cl%C3%A9+primaire+a+%C3%A9t%C3%A9+ajout%C3%A9e+sur+name" onclick="return confirmLink(this, 'ALTER TABLE `template` DROP PRIMARY KEY, ADD PRIMARY KEY(`name`)')">
+            <img src="sql_data/b_primary.png" title="Primaire" alt="Primaire" class="icon" height="16" width="16"></a>
+            
+    </td>
+    <td align="center">
+        
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;sql_query=ALTER+TABLE+%60template%60+ADD+UNIQUE%28%60name%60%29&amp;zero_rows=Un+index+a+%C3%A9t%C3%A9+ajout%C3%A9+sur+name">
+            <img src="sql_data/b_unique.png" title="Unique" alt="Unique" class="icon" height="16" width="16"></a>
+            
+    </td>
+    <td align="center">
+        
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;sql_query=ALTER+TABLE+%60template%60+ADD+INDEX%28%60name%60%29&amp;zero_rows=Un+index+a+%C3%A9t%C3%A9+ajout%C3%A9+sur+name">
+            <img src="sql_data/b_index.png" title="Index" alt="Index" class="icon" height="16" width="16"></a>
+            
+    </td>
+    
+    <td nowrap="nowrap" align="center">
+        <img src="sql_data/bd_ftext.png" title="Texte entier" alt="Texte entier" class="icon" height="16" width="16">
+    </td>
+        
+</tr>
+    </tbody>
+</table>
+
+<img class="selectallarrow" src="sql_data/arrow_ltr.png" alt="Pour la sélection :" height="22" width="38">
+<a href="http://localhost/phpmyadmin/tbl_structure.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;checkall=1" onclick="if (markAllRows('fieldsForm')) return false;">
+    Tout cocher</a>
+/
+<a href="http://localhost/phpmyadmin/tbl_structure.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960" onclick="if (unMarkAllRows('fieldsForm')) return false;">
+    Tout décocher</a>
+
+<i>Pour la sélection :</i>
+
+<button class="mult_submit" type="submit" name="submit_mult" value="Afficher" title="Afficher">
+<img src="sql_data/b_browse.png" title="Afficher" alt="Afficher" class="icon" height="16" width="16"></button>
+<button class="mult_submit" type="submit" name="submit_mult" value="Modifier" title="Modifier">
+<img src="sql_data/b_edit.png" title="Modifier" alt="Modifier" class="icon" height="16" width="16"></button>
+<button class="mult_submit" type="submit" name="submit_mult" value="Supprimer" title="Supprimer">
+<img src="sql_data/b_drop.png" title="Supprimer" alt="Supprimer" class="icon" height="16" width="16"></button>
+<button class="mult_submit" type="submit" name="submit_mult" value="Primaire" title="Primaire">
+<img src="sql_data/b_primary.png" title="Primaire" alt="Primaire" class="icon" height="16" width="16"></button>
+<button class="mult_submit" type="submit" name="submit_mult" value="Unique" title="Unique">
+<img src="sql_data/b_unique.png" title="Unique" alt="Unique" class="icon" height="16" width="16"></button>
+<button class="mult_submit" type="submit" name="submit_mult" value="Index" title="Index">
+<img src="sql_data/b_index.png" title="Index" alt="Index" class="icon" height="16" width="16"></button>
+</form>
+<hr>
+
+<a href="http://localhost/phpmyadmin/tbl_printview.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php"><img class="icon" src="sql_data/b_print.png" alt="Version imprimable" height="16" width="16">Version imprimable</a>
+
+<a href="http://localhost/phpmyadmin/tbl_relation.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php"><img class="icon" src="sql_data/b_relations.png" alt="Gestion des relations" height="16" width="16">Gestion des relations</a>
+        <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php&amp;session_max_rows=all&amp;sql_query=SELECT+%2A+FROM+%60template%60+PROCEDURE+ANALYSE%28%29"><img class="icon" src="sql_data/b_tblanalyse.png" alt="Suggérer des optimisations quant à la structure de la table" height="16" width="16">Suggérer des optimisations quant à la structure de la table</a><a href="http://dev.mysql.com/doc/refman/5.1/en/procedure-analyse.html" target="mysql_doc"><img class="icon" src="sql_data/b_help.png" alt="Documentation" title="Documentation" height="11" width="11"></a>
+<a href="http://localhost/phpmyadmin/tbl_tracking.php?db=pretz&amp;table=template&amp;token=d0534b7117418e890618838ed32fe960&amp;goto=tbl_structure.php&amp;back=tbl_structure.php"><img class="icon" src="sql_data/eye.png" alt="Suivre la table" height="16" width="16"> Suivre la table</a>    
+    <br>
+<form method="post" action="tbl_addfield.php" onsubmit="return checkFormElementInRange(this, 'num_fields', 'Vous devez ajouter au moins une colonne', 1)">
+    <input name="db" value="pretz" type="hidden"><input name="table" value="template" type="hidden"><input name="token" value="d0534b7117418e890618838ed32fe960" type="hidden"><img class="icon" src="sql_data/b_insrow.png" alt="Ajouter une colonne" height="16" width="16">Ajouter <input name="num_fields" size="2" maxlength="2" value="1" style="vertical-align: middle;" onfocus="this.select()" type="text"> colonne(s)<input name="field_where" id="field_where_last" value="last" checked="checked" type="radio">
+<label for="field_where_last">En fin de table</label>
+<input name="field_where" id="field_where_first" value="first" type="radio">
+<label for="field_where_first">En début de table</label>
+<input name="field_where" id="field_where_after" value="after" type="radio">
+<label for="field_where_after">Après </label>
+<select name="after_field" style="vertical-align: middle;" onclick="this.form.field_where[2].checked=true" onchange="this.form.field_where[2].checked=true"><option selected="selected" value="id">id</option>
+<option value="logo">logo</option>
+<option value="back_color">back_color</option>
+<option value="menu_color">menu_color</option>
+<option value="name">name</option>
+</select><input value="Exécuter" style="vertical-align: middle;" type="submit">
+</form>
+<hr>
+    <h2>Index: <a href="http://dev.mysql.com/doc/refman/5.1/en/optimizing-database-structure.html" target="mysql_doc"><img class="icon" src="sql_data/b_help.png" alt="Documentation" title="Documentation" height="11" width="11"></a></h2><table><thead><tr><th colspan="2">Action</th><th>Nom de l'index</th><th>Type</th><th>Unique</th><th>Compressé</th><th>Colonne</th><th>Cardinalité</th><th>Interclassement</th><th>Null</th><th>Commentaire</th></tr></thead><tbody><tr class="odd"><td rowspan="1">    <a href="http://localhost/phpmyadmin/tbl_indexes.php?db=pretz&amp;table=template&amp;index=PRIMARY&amp;token=d0534b7117418e890618838ed32fe960"><img src="sql_data/b_edit.png" title="Modifier" alt="Modifier" class="icon" height="16" width="16"></a></td>
+<td rowspan="1">    <a href="http://localhost/phpmyadmin/sql.php?db=pretz&amp;table=template&amp;sql_query=ALTER+TABLE+%60template%60+DROP+PRIMARY+KEY&amp;zero_rows=La+cl%C3%A9+primaire+a+%C3%A9t%C3%A9+effac%C3%A9e&amp;token=d0534b7117418e890618838ed32fe960" onclick="return confirmLink(this, '`ALTER TABLE template DROP PRIMARY KEY`')"><img src="sql_data/b_drop.png" title="Supprimer" alt="Supprimer" class="icon" height="16" width="16"></a></td>
+<th rowspan="1">PRIMARY</th><td rowspan="1">BTREE</td><td rowspan="1">Oui</td><td rowspan="1">Non</td><td>id</td><td>0</td><td>A</td><td></td><td rowspan="1"></td></tr></tbody></table><br>
+<form action="./tbl_indexes.php" method="post" onsubmit="return checkFormElementInRange(this, 'idx_num_fields',
+        'Le nombre de colonnes doit être plus grand que zéro.',
+        1)">
+<fieldset>
+    <input name="db" value="pretz" type="hidden"><input name="table" value="template" type="hidden"><input name="token" value="d0534b7117418e890618838ed32fe960" type="hidden">Créer un index sur&nbsp;<input size="2" name="added_fields" value="1" type="text">&nbsp;colonne(s)    <input name="create_index" value="Exécuter" onclick="return checkFormElementInRange(this.form,
+            'idx_num_fields',
+            'Le nombre de colonnes doit être plus grand que zéro.',
+            1)" type="submit">
+</fieldset>
+</form>
+<br>
+    <script type="text/javascript">
+// <![CDATA[
+window.addEvent('domready', function(){
+    var status = {
+        'true': '- ',
+        'false': '+ '
+    };
+
+    var anchortablestatistics = new Element('a', {
+        'id': 'toggle_tablestatistics',
+        'href': 'javascript:void(0)',
+        'events': {
+            'click': function(){
+                mySlidetablestatistics.toggle();
+            }
+        }
+    });
+
+    anchortablestatistics.appendText('Détails...');
+    anchortablestatistics.injectBefore('tablestatistics');
+
+    var slider_statustablestatistics = new Element('span', {
+        'id': 'slider_status_tablestatistics'
+    });
+    slider_statustablestatistics.appendText('+ ');
+    slider_statustablestatistics.injectBefore('toggle_tablestatistics');
+
+    var mySlidetablestatistics = new Fx.Slide('tablestatistics');
+        mySlidetablestatistics.hide();
+            mySlidetablestatistics.addEvent('complete', function() {
+                $('slider_status_tablestatistics').set('html', status[mySlidetablestatistics.open]);
+                    });
+
+    $('tablestatistics').style.display="block";
+});
+    document.write('<div id="tablestatistics"  style="display: none;">');
+    //]]>
+    </script><span id="slider_status_tablestatistics">+ </span><a href="javascript:void(0)" id="toggle_tablestatistics">Détails...</a><div style="margin: 0px 0px 6.56667px; position: static; overflow: hidden; height: 0px;"><div id="tablestatistics" style="display: block; margin: 0px;">
+    <noscript>
+    <div id="tablestatistics" />
+    </noscript>
+    
+    <a name="showusage"></a>
+        <table id="tablespaceusage" class="data">
+    <caption class="tblHeaders">Espace utilisé</caption>
+    <thead>
+    <tr>
+        <th>Type</th>
+        <th colspan="2">Espace</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="odd">
+        <th class="name">Données</th>
+        <td class="value">16&nbsp;384</td>
+        <td class="unit">o</td>
+    </tr>
+            <tr class="even">
+        <th class="name">Index</th>
+        <td class="value">0</td>
+        <td class="unit">o</td>
+    </tr>
+                <tr class="odd">
+        <th class="name">Total</th>
+        <td class="value">16&nbsp;384</td>
+        <td class="unit">o</td>
+    </tr>
+                </tbody>
+    </table>
+            <table id="tablerowstats" class="data">
+    <caption class="tblHeaders">Statistiques</caption>
+    <thead>
+    <tr>
+        <th>Information</th>
+        <th>Valeur</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr class="odd">
+        <th class="name">format</th>
+        <td class="value">Compact</td>
+    </tr>
+            <tr class="even">
+        <th class="name">Interclassement</th>
+        <td class="value"><dfn title="suédois, insensible à la casse">latin1_swedish_ci</dfn></td>
+    </tr>
+            <tr class="odd">
+        <th class="name">Suivant Autoindex</th>
+        <td class="value">1</td>
+    </tr>
+            <tr class="even">
+        <th class="name">Création</th>
+        <td class="value">Lun 17 Janvier 2011 à 11:44</td>
+    </tr>
+            </tbody>
+    </table>
+    <div class="clearfloat"></div>
+<script type="text/javascript">
+//<![CDATA[
+// updates current settings
+if (window.parent.setAll) {
+    window.parent.setAll('fr-utf-8', 'utf8_general_ci', '1', 'pretz', 'template', 'd0534b7117418e890618838ed32fe960');
+}
+    // set current db, table and sql query in the querywindow
+if (window.parent.reload_querywindow) {
+    window.parent.reload_querywindow(
+        'pretz',
+        'template',
+        '');
+}
+    
+if (window.parent.frame_content) {
+    // reset content frame name, as querywindow needs to set a unique name
+    // before submitting form data, and navigation frame needs the original name
+    if (typeof(window.parent.frame_content.name) != 'undefined'
+     && window.parent.frame_content.name != 'frame_content') {
+        window.parent.frame_content.name = 'frame_content';
+    }
+    if (typeof(window.parent.frame_content.id) != 'undefined'
+     && window.parent.frame_content.id != 'frame_content') {
+        window.parent.frame_content.id = 'frame_content';
+    }
+    //window.parent.frame_content.setAttribute('name', 'frame_content');
+    //window.parent.frame_content.setAttribute('id', 'frame_content');
+}
+//]]>
+</script>
+<div id="selflink" class="print_ignore">
+<a href="http://localhost/phpmyadmin/index.php?db=pretz&amp;table=template&amp;target=sql.php&amp;token=d0534b7117418e890618838ed32fe960" title="Ouvrir une nouvelle fenêtre phpMyAdmin" target="_blank"><img class="icon" src="sql_data/window-new.png" alt="Ouvrir une nouvelle fenêtre phpMyAdmin"></a>
+</div>
+</div></div></body></html>

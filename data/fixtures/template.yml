@@ -1,0 +1,13 @@
+## YAML Template.
+---
+
+template:
+  univ:
+    logo: logo.gif
+    backColor: '#F2EDE7'
+    menuColor: '#6699CC'
+    nameTemplate: Université d'Avignon
+    url: www.univ-avignon.fr
+    nameStructure: Universite Avignon
+    colorMessage: '#5C9CCC'
+    active: 1

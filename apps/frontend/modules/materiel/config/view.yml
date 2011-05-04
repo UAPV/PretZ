@@ -1,0 +1,8 @@
+## YAML Template.
+---
+
+indexSuccess:
+  stylesheets: [listeMateriel.css]
+
+  has_layout:     true
+  layout:         iframeLayout

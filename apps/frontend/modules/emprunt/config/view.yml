@@ -1,0 +1,14 @@
+## YAML Template.
+---
+
+indexSuccess:
+  stylesheets: [listeEmprunt.css,identification.css]
+  javascripts: [ emprunt.js ]
+
+showSuccess:
+  stylesheets: [listeEmprunt.css,identification.css]
+  javascripts: [ emprunt.js ]
+
+accueilSuccess:
+  stylesheets: [listeEmprunt.css]
+  javascripts: [ emprunt.js ]

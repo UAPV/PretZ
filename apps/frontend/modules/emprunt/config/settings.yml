@@ -1,0 +1,9 @@
+## YAML Template.
+---
+all:
+  .actions:
+    login_module:           default
+    login_action:           login
+
+    secure_module:          default
+    secure_action:          secure

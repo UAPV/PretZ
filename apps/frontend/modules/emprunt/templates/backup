@@ -1,0 +1,44 @@
+<div id="carte" class="survol ui-dialog ui-widget ui-widget-content ui-corner-all relative ">
+            <center><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">J'ai ma carte de bibliothèque</div></center>
+            <div class="message">
+                <br /><br />
+                Scanner ma carte
+            </div>
+        </div>
+
+
+        <div id="scanDialog" style="display:none;">
+            <p><center>Scannez votre carte avec le lecteur SVP</center></p>
+            <input type="text" id="carteId"/>
+        </div>
+
+
+        $("#carte").click(function(){
+            $( "#scanDialog" ).dialog({
+                 modal: true,
+                 buttons:
+                 {
+                     Fermer: function()
+                    {
+                         $("#scanDialog" ).dialog('close');
+                    }
+                 }
+            });
+            document.getElementById('carteId').focus();
+        })
+
+    <div id="carte" class="survol ui-dialog ui-widget ui-widget-content ui-corner-all relative ">
+        <center><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">Liste des administrateurs</div></center>
+        <table cellpadding="5" id="liste">
+            <?php foreach(AdminQuery::listAdmin5() as $admin) : ?>
+            <tr style="-moz-border-radius: 0px;" id="<?php echo $admin->getName() ?>">
+                <td style="width: 342px;-moz-border-radius: 0px;"><center><?php echo $admin->getName(); ?></center></td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+    </div>
+
+     <div id="scanDialog" style="display:none;">
+        <p><center>Saisissez votre mot de passe</center></p>
+        <input type="password" id="mdpAdmin"/>
+     </div>
