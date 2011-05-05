@@ -55,7 +55,7 @@
                  var barcode = $("#produit").val();
                  var nomUser = $("#uidUser").val();
                  if(barcode != "" && nomUser != "")
-                    searchProduct(barcode,nomUser,'<?php echo url_for("emprunt/ajax")?>','<?php echo url_for("emprunt/ajaxReferant")?>');
+                    searchProduct(barcode,nomUser,'<?php echo url_for("emprunt/ajax")?>','<?php echo url_for("emprunt/ajaxReferant")?>','<?php echo url_for("emprunt/ajaxRemoveProduct")?>');
                  else
                  {
                     jAlert("Veuillez attendre qu'une personne se connecte svp");
