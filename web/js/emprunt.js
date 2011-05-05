@@ -275,7 +275,7 @@ function loadUser(uid, url)
 /*
     Display a dialog textbox to know the name of the referant of the student.
  */
-function dialogReferant(url)
+function dialogReferant(url,urlRemoveProduct)
 {
    var nomReferant;
    var continuer = false;
@@ -300,7 +300,7 @@ function dialogReferant(url)
                         {
                             if(data != null && nomReferant != null && data.authorized)
                             {
-                                $("#listeEmprunt").append("<tr id='Pro"+data.id+"'><td><b>"+data.name+"</b><br /><p style='margin-right:5px;font-size:0.8em; color:#d3d3d3;'><i>"+data.comments+"</i></p></td><td class='optionSup'><a href='#' onClick=\"removeProduct('"+data.id+"');\"><img src='/images/cross.png' style='margin-left:5px;margin-right:5px;border:none;' alt='supprimer' style='width:30%;' /></a></td><td class='option'><input type='text' class='dateRetour' id='Input"+data.idProduct+"' value='Date retour' /></td></tr>");
+                                $("#listeEmprunt").append("<tr id='Pro"+data.id+"'><td><b>"+data.name+"</b><br /><p style='margin-right:5px;font-size:0.8em; color:#d3d3d3;'><i>"+data.comments+"</i></p></td><td class='optionSup'><a href='#' onClick=\"removeProduct('"+data.id+"','"+urlRemoveProduct+"');\"><img src='/images/cross.png' style='margin-left:5px;margin-right:5px;border:none;' alt='supprimer' style='width:30%;' /></a></td><td class='option'><input type='text' class='dateRetour' id='Input"+data.idProduct+"' value='Date retour' /></td></tr>");
                                 $("#"+data.barcode).effect("highlight",{},500);
                                 $("#produit").val("");
                                 $("#validate").show();
@@ -313,7 +313,7 @@ function dialogReferant(url)
                                     if(r){
                                         continuer = true;
                                         dialog.dialog('close');
-                                        dialogReferantBox('<?php echo url_for("emprunt/ajaxReferantDialog")?>');
+                                        dialogReferantBox('<?php echo url_for("emprunt/ajaxReferantDialog")?>',urlRemoveProduct);
                                         return true;
                                     }
                                     else
@@ -340,7 +340,7 @@ function dialogReferant(url)
 /*
     if the user isn't on a list of a referant, you can lend him a product : you enter the name of a referant (token in the LDAP) and a email is sent to him.
  */
-function dialogReferantBox(url)
+function dialogReferantBox(url, urlRemoveProduct)
 {
     var nomEtudiant = $("#uidUser").val();
     $( "#dialog:ui-dialog" ).dialog( "destroy" );
@@ -363,7 +363,7 @@ function dialogReferantBox(url)
                          {
                              if(data.exist)
                              {
-                                 $("#listeEmprunt").append("<tr id='Pro"+data.id+"'><td><b>"+data.name+"</b><br /><p style='margin-right:5px;font-size:0.8em; color:#d3d3d3;'><i>"+data.comments+"</i></p></td><td class='optionSup'><a href='#' onClick=\"removeProduct('"+data.id+"');\"><img src='/images/cross.png' style='margin-left:5px;margin-right:5px;border:none;' alt='supprimer' style='width:30%;' /></a></td><td class='option'><input type='text' class='dateRetour' id='Input"+data.idProduct+"' value='Date retour' /></td></tr>");
+                                 $("#listeEmprunt").append("<tr id='Pro"+data.id+"'><td><b>"+data.name+"</b><br /><p style='margin-right:5px;font-size:0.8em; color:#d3d3d3;'><i>"+data.comments+"</i></p></td><td class='optionSup'><a href='#' onClick=\"removeProduct('"+data.id+"','"+urlRemoveProduct+"');\"><img src='/images/cross.png' style='margin-left:5px;margin-right:5px;border:none;' alt='supprimer' style='width:30%;' /></a></td><td class='option'><input type='text' class='dateRetour' id='Input"+data.idProduct+"' value='Date retour' /></td></tr>");
                                  $("#"+data.barcode).effect("highlight",{},500);
                                  $("#produit").val("");
                                  $("#validate").show();
@@ -387,7 +387,7 @@ function dialogReferantBox(url)
     Search a product in the databace thanks a barcode and verify the availability of it.
     Display the product if it's ok in the list.
  */
-function searchProduct(barcode, nomUser, url, urlReferant)
+function searchProduct(barcode, nomUser, url, urlReferant, urlRemoveProduct)
 {
     $.ajax({
        type: 'POST',
@@ -408,20 +408,20 @@ function searchProduct(barcode, nomUser, url, urlReferant)
                    {
                       if(data.referant == '1')
                       {
-                          dialogReferant(urlReferant);
+                          dialogReferant(urlReferant,urlRemoveProduct);
                           idLend = data.idLend;
                           idProduct = data.idProduct
                       }
                       else if(data.comments != null && data.comments != "")
                       {
-                          $("#listeEmprunt").append("<tr id='Pro"+data.idProduct+"'><td><b>"+data.name+"</b><br /><p style='margin-right:5px;font-size:0.8em; color:#d3d3d3;'><i>"+data.comments+"</i></p></td><td class='optionSup'><a href='#' onClick=\"removeProduct('"+data.idProduct+"');\"><img src='/images/cross.png' style='margin-left:5px;margin-right:5px;border:none;' alt='supprimer' style='width:30%;' /></a></td><td class='option'><input type='text' class='dateRetour' id='Input"+data.idProduct+"' value='Date retour' /></td></tr>");
+                          $("#listeEmprunt").append("<tr id='Pro"+data.idProduct+"'><td><b>"+data.name+"</b><br /><p style='margin-right:5px;font-size:0.8em; color:#d3d3d3;'><i>"+data.comments+"</i></p></td><td class='optionSup'><a href='#' onClick=\"removeProduct('"+data.idProduct+"','"+urlRemoveProduct+"');\"><img src='/images/cross.png' style='margin-left:5px;margin-right:5px;border:none;' alt='supprimer' style='width:30%;' /></a></td><td class='option'><input type='text' class='dateRetour' id='Input"+data.idProduct+"' value='Date retour' /></td></tr>");
                           $("#Pro"+data.idProduct).effect("highlight",{},500);
                           $("#produit").val("");
                           $("#validate").show();
                       }
                       else
                       {
-                          $("#listeEmprunt").append("<tr id='Pro"+data.idProduct+"'><td><b>"+data.name+"</b><br /></td><td class='optionSup'><a href='#' onClick=\"removeProduct('"+data.idProduct+"');\"><img src='/images/cross.png' style='margin-left:5px;margin-right:5px;border:none;' alt='supprimer' style='width:30%;' /></a></td><td class='option'><input type='text' class='dateRetour' id='Input"+data.idProduct+"' value='Date retour' /></td></tr>");
+                          $("#listeEmprunt").append("<tr id='Pro"+data.idProduct+"'><td><b>"+data.name+"</b><br /></td><td class='optionSup'><a href='#' onClick=\"removeProduct('"+data.idProduct+"','"+urlRemoveProduct+"');\"><img src='/images/cross.png' style='margin-left:5px;margin-right:5px;border:none;' alt='supprimer' style='width:30%;' /></a></td><td class='option'><input type='text' class='dateRetour' id='Input"+data.idProduct+"' value='Date retour' /></td></tr>");
                           $("#Pro"+data.idProduct).effect("highlight",{},500);
                           $("#produit").val("");
                           $("#validate").show();
