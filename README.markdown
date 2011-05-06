@@ -57,7 +57,8 @@ Installation
       
       > php symfony propel:data-load
 
-
+* In this version, you don't have a install module so you must write your database password in `/config/database.yml`. You must add your IP address in database (`option_ip`).
+To finish, to access to administration page, you must have a first name of administrator. So you write your name in `web/uploads/god.yml` file.
 
 
 Description
