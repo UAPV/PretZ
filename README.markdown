@@ -65,6 +65,7 @@ Description
 -----------
 
 > There are different levels for users : person who lends is a "gestionnaire" and person who lends and can change database (ie access admin page) is an "admin".
+> You can lend product into `pretz/emprunt`
 
 > PretZ contains two parts :
 
