@@ -8,7 +8,7 @@ $browser->get('/')->info('Page d’accueil, redirection vers le CAS')->
 click('#login')->with('request')->begin()->
   isParameter('module', 'utilisateur')->
   isParameter('action', 'edit')->
-  isParameter('id', ‘1’)->
+  isParameter('id', '1')->
 end()
 ;
 
