@@ -17,3 +17,8 @@ $browser->
     checkElement('body', '!/This is a temporary page/')->
   end()
 ;
+
+$browser->get('/')->info(‘Page d’accueil, ouverture de la boite de dialogue’)->
+$browser->info('L’accueil avec le scanne')-> with('response')->
+  checkElement('.ui-dialog', true)->
+;
