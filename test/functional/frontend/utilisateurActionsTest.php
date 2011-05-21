@@ -13,5 +13,5 @@ end()
 ;
 
 $browser->info('L’accueil avec le scanne')-> with('response')->
-  checkElement('.ui-dialog', true)->
+  checkElement('.ui-dialog', true)
 ;
