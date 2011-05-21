@@ -12,7 +12,6 @@ click('#login')->with('request')->begin()->
 end()
 ;
 
-$browser->get('/')->info('Page d’accueil, ouverture de la boite de dialogue')->
 $browser->info('L’accueil avec le scanne')-> with('response')->
   checkElement('.ui-dialog', true)->
 ;
